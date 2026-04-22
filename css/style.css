@@ -86,22 +86,49 @@ iframe, video {
 ***************************************************
 ***************************************************/
 
+:root {
+  /* TITLES */
+  --color-title: #01151D;
+
+  /* LINKS */
+  --color-link: #0B12EE;
+
+  /* TEXT (ON WHITE) */
+  --color-text: #01151D;
+
+  /* BUTTONS */
+  --color-button-bg: #0B12EE;
+  --color-button-text: #F0EFED;
+
+  /* BACKGROUND */
+  --color-bg: #F0EFED;
+
+  /* SVG ELEMENTS */
+  --color-svg: #0B12EE;
+}
+
+
 body {
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 1rem;
+  font-family: "Bricolage Grotesque",Helvetica, Arial, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
 }
 
 h1 {
   font-family: "Bricolage Grotesque", Helvetica, Arial, sans-serif;
-  kerning: -1em;
+  letter-spacing: -0.05em;
 }
 
 h2, h3, h4, h5, h6 {
   font-family: Helvetica, Arial, sans-serif;
 }
 
+a {
+  color: var(--color-link);
+}
+
 /* scale */
-h1 { font-size: 3rem; font-weight: 700; }
+h1 { font-size: 3.5rem; font-weight: 500; }
 h2 { font-size: 2.25rem; font-weight: 400; }
 h3 { font-size: 1.75rem; font-weight: 400; }
 h4 { font-size: 1.375rem; font-weight: 400; }
@@ -109,8 +136,10 @@ h5 { font-size: 1.125rem; font-weight: 400; }
 h6 { font-size: 0.9rem; font-weight: 400; }
 
 p {
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 1rem;
   margin-bottom: 1em;
 }
+
 
 
