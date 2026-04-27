@@ -15,7 +15,6 @@ Explore the creative potential of CSS and Js.
 **about-me.hmtl** - Author info (me!)
 **projects.hmtl** - Project browser section
 **contacts.html** - Author contacts
-**processing.html** - Projects developed in Processing (with canvas)
 
 # Project Structure:
 ! [Structure](imagens\readme\estrutura.jpg)
