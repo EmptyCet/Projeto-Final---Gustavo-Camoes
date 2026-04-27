@@ -23,30 +23,46 @@
     </head>
 
     <body>
-        <h1>GUSTAVO CAMÕES</h1>
-        <h1>DESIGN PORTFOLIO</h1>
-        <h2>Welcome to portfolio</h2>
-        <header id="HeaderTOP">
-            <div id="HeaderLOGO">
-                <a href="index.html" title="Gustavo Design - HOME">
-                    <img src="imagens/Gustavo_Logo.svg" alt="GUSTAVO Design Logo">
-                </a>
-            </div>
-        <nav id="HeaderNAV">
-            <ul>
-                <li>
-                    <a href="index.html" title="Gustavo Design - HOME">Home</a></li>
-                <li>
-                    <a href="about-me.html" title="Gustavo Design - ABOUT">About Me</a></li>
-                <li>
-                    <a href="projects.html" title="Gustavo Design - PROJECTS">Projects</a></li>
-                <li>
-                    <a href="contacts.html" title="Gustavo Design - CONTACT">Contact</a></li>
-            </ul>
+        <header id="headerTOP" class="pageWidth">
+            <nav id="mainMENU">
+                <div class="navAction">
+                    <div id="headerLOGO">
+                        <a href="index.html" title="Gustavo Design - HOME"
+                        rel="noopener noreferrer"><img src="imagens/Gustavo_Logo.svg" alt="GUSTAVO Design Logo"><strong>Gustavo Design</strong>
+                        </a>
+                    <div class="nav__toggle" id="nav__toggle">
+                        <i class="ri-menu-line nav__burger"></i>
+                        <i class="ri-close-line nav__close"></i>
+                    </div>
+                </div>
 
-        </nav>
+            <!-- Navegation area, with all the internal nav links-->
+
+                <div class="nav__menu" id="navMenu">
+                    <ul class="nav__list">
+                        <li>
+                            <a class="nav__link active" href="index.html" title="HOME" rel="noopener noreferrer">Home</a>
+                        </li>
+                        <li>
+                            <a class="nav__link active" href="about-me.html" title="Gustavo Design - ABOUT">About Me</a></li>
+                        <li>
+                            <a class="nav__link active" href="projects.html" title="Gustavo Design - PROJECTS">Projects</a>
+                        </li>
+                        <li>
+                            <a class="nav__link active" href="contacts.html" title="Gustavo Design - CONTACT">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
         </header>
-        <footer id="FooterBOTTOM">
+
+        <main class="pageWidth">
+            <h1>GUSTAVO CAMÕES</h1>
+            <h1>DESIGN PORTFOLIO</h1>
+            <h2>Welcome to portfolio</h2>
+        </main>
+
+        <footer class="pageWidth">
             <p>&copy; 2026 GUSTAVO CAMÕES. All rights reserved.</p>
         </footer>
         
