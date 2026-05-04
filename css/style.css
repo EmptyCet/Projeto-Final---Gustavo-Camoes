@@ -87,7 +87,7 @@ iframe, video {
 ***************************************************/
 
 :root {
-  --header-height: 3.5rem;
+  --header-height: 3.5rem; 
   /* TITLES, TEXT, LINES */
   --primary-color: #01151D;
 
@@ -106,7 +106,6 @@ iframe, video {
 }
 
 
-
 body {
   font-family: "Bricolage Grotesque",Helvetica, Arial, sans-serif;
   background-color: var(--secondary-color);
@@ -114,6 +113,7 @@ body {
 }
 
 small{
+  font-size: 0.875rem;
 }
 
 strong {
@@ -138,7 +138,7 @@ a {
 }
 
 a:hover a:active, a.active {
-  color: var(--pop-color);
+  color: var(--primary-color);
 }
 
 /* scale */
@@ -171,7 +171,7 @@ p {
 }
 
 /*id for header styling*/
-#headerTOP {
+#topHeader {
   position: fixed;
   top: 0;
   left: 0;
@@ -182,7 +182,7 @@ p {
   z-index: var(--z-fixed);
 }
 
-#mainMENU {
+#mainMenu {
   height: var(--header-height);
   width: 100%;
   max-width: 1680px;
@@ -250,8 +250,8 @@ p {
     width: 100%;
     height: calc(100vh - 3.5rem);
     overflow: auto;
-    /*pointer-events: none;
-    opacity: 0;*/
+    pointer-events: none;
+    opacity: 0;
     transition: top .4s, opacity .3s;
   }
   .nav__menu::-webkit-scrollbar {
@@ -278,8 +278,69 @@ p {
   color: var(--pop-color);
 }
 
+/* Show menu */
+.show-menu {
+  opacity: 1;
+  top: 3.5rem;
+  pointer-events: initial;
+}
+
+/* Show icon */
+.show-icon .nav__burger {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+.show-icon .nav__close {
+  opacity: 1;
+  transform: rotate(90deg);
+}
+
+/*navigation for desktop*/
+@media screen and (min-width: 992px) {
+  #topHeader {
+    margin-inline: auto;
+  }
+  #mainMenu {
+    height: calc(var(--header-height) + 1rem);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav__toggle {
+    display: none;
+  }
+
+  .nav__list {
+    height:100%;
+    display: flex;
+    column-gap: 3rem;
+  }
+  .nav__link {
+    height: 100%;
+    padding: 0;
+    justify-content: initial;
+    column-gap: .25rem;
+  }
+
+  .nav__link:hover {
+    background-color: transparent;
+  }
+}
 
 
+/*--------------------------------------------*/
+/*---------------MAIN CONTENT-----------------*/
+/*--------------------------------------------*/
+
+#mainContent {
+  margin-top:var(--header-height)!important;
+}
+
+@media screeen and (min-wIdth: 992px) {
+  #mainContent {
+    margin-top: calc(var(--header-height)+2rem)
+  }
+}
 
 
 
