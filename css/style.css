@@ -138,7 +138,7 @@ a {
 }
 
 a:hover a:active, a.active {
-  color: var(--primary-color);
+  color: var(--pop-color);
 }
 
 /* scale */
