@@ -141,6 +141,25 @@ a:hover a:active, a.active {
   color: var(--pop-color);
 }
 
+/***Spacing***/
+
+.space-S{
+  height: 30px;
+}
+
+.space-M{
+  height: 60px;
+}
+
+.space-L{
+  height: 90px;
+}
+
+.space-XL{
+  height: 120px;
+}
+
+
 /* scale */
 h1 { font-size: 3.5rem; font-weight: 500; }
 h2 { font-size: 2.25rem; font-weight: var( --font-weight-regular); }
