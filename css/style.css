@@ -101,7 +101,7 @@ iframe, video {
   --font-weight-bold: 500;
 
   /*----- z index -----*/
-  --z-tooltipo: 10;
+  --z-tooltip: 10;
   --z-fixed: 100;
 }
 
@@ -141,10 +141,28 @@ a:hover a:active, a.active {
   color: var(--pop-color);
 }
 
+/***Spacing***/
+
+.space-S{
+  height: 30px;
+}
+
+.space-M{
+  height: 60px;
+}
+
+.space-L{
+  height: 90px;
+}
+
+.space-XL{
+  height: 120px;
+}
+
 /* scale */
 h1 { font-size: 3.5rem; font-weight: 500; }
-h2 { font-size: 2.25rem; font-weight: var( --font-weight-regular); }
-h3 { font-size: 1.75rem; font-weight: var( --font-weight-regular); }
+h2 { font-size: 2rem; font-weight: var( --font-weight-regular); }
+h3 { font-size: 1.25rem; font-weight: var( --font-weight-regular); }
 h4 { font-size: 1.375rem; font-weight: var( --font-weight-regular); }
 h5 { font-size: 1.125rem; font-weight: var( --font-weight-regular); }
 h6 { font-size: 0.9rem; font-weight: var( --font-weight-regular); }
@@ -336,12 +354,87 @@ p {
   margin-top:var(--header-height)!important;
 }
 
-@media screeen and (min-wIdth: 992px) {
+@media screen and (min-width: 992px) {
   #mainContent {
     margin-top: calc(var(--header-height)+2rem)
   }
 }
 
+.banner-container {
+  display:flex;
+  justify-content: space-between;
+}
+.left-hero {
+  display: 40%;
+  position: relative;
+}
 
+.banner-container:last-child {
+    margin-top: 5rem;
+}
 
+.right-hero{
+  max-width: 55vw;
+  height:100%
+}
 
+.right-hero img {
+    width: 100%;
+    height: 20%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Navigation for mobile devices */
+@media screen and (max-width: 992px) {
+  .left-hero {
+    width:100%;
+  }
+
+  .right-hero {
+    display: none;
+  }
+}
+
+h1.heading-text {
+    color: var(--primary-color);
+    margin: 5rem 5.5rem 2rem 0;
+}
+
+h1.heading-text span {
+    color: var(--secondary-color)
+}
+
+p.description {
+    color:var(--primary-color);
+    font-size: 1.125rem;
+    margin-bottom: 5rem;
+}
+
+.btn {
+    border: none;
+    color: #FFFFFF;
+    background-color:var(--primary-color);
+    padding: 1.25rem 1.75rem;
+    border-radius: 12px;
+}
+
+.h5.nav-button.btn {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color:var(--pop-color);
+    cursor: pointer;
+}
+
+.banner-container:last-child {
+    margin-top: 5rem;
+}
+
+.banner-container div img{
+  max-width: 55vw;
+  position: absolute;
+  right: -16px;
+}
