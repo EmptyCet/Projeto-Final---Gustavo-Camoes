@@ -354,7 +354,7 @@ p {
   margin-top:var(--header-height)!important;
 }
 
-@media screeen and (min-wIdth: 992px) {
+@media screen and (min-width: 992px) {
   #mainContent {
     margin-top: calc(var(--header-height)+2rem)
   }
@@ -367,6 +367,22 @@ p {
 .left-hero {
   display: 40%;
   position: relative;
+}
+
+.banner-container:last-child {
+    margin-top: 5rem;
+}
+
+.right-hero{
+  max-width: 55vw;
+  height:100%
+}
+
+.right-hero img {
+    width: 100%;
+    height: 20%;
+    object-fit: cover;
+    display: block;
 }
 
 /* Navigation for mobile devices */
@@ -422,6 +438,8 @@ p.description {
   position: absolute;
   right: -16px;
 }
+
+
 
 
 
