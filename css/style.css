@@ -98,12 +98,13 @@ iframe, video {
   --pop-color: #0B12EE;  
 
   --font-weight-regular: 400;
-  --font-weight-bold: 500;
+  --font-weight-bold: 600;
 
   /*----- z index -----*/
   --z-tooltipo: 10;
   --z-fixed: 100;
 }
+
 
 
 body {
@@ -117,19 +118,23 @@ small{
 }
 
 strong {
-  font-weight: 500;
+  font-weight: var(--font-weight-regular);
+}
+
+.semibold {
+  font-weight: var(--font-weight-bold);
 }
 
 ul {
   list-style: none;
 }
 
-h1 {
+.display-font {
   font-family: "Bricolage Grotesque", Helvetica, Arial, sans-serif;
   letter-spacing: -0.05em;
 }
 
-h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: Helvetica, Arial, sans-serif;
 }
 
@@ -161,17 +166,17 @@ a:hover a:active, a.active {
 
 
 /* scale */
-h1 { font-size: 3.5rem; font-weight: 500; }
-h2 { font-size: 2.25rem; font-weight: var( --font-weight-regular); }
-h3 { font-size: 1.75rem; font-weight: var( --font-weight-regular); }
-h4 { font-size: 1.375rem; font-weight: var( --font-weight-regular); }
-h5 { font-size: 1.125rem; font-weight: var( --font-weight-regular); }
-h6 { font-size: 0.9rem; font-weight: var( --font-weight-regular); }
+h1 { font-size: 3.5rem; font-weight:500;}
+h2 { font-size: 2.25rem; font-weight:500; line-height: 1em}
+h3 { font-size: 1.75rem;}
+h4 { font-size: 1.375rem;}
+h5 { font-size: 1.125rem;}
+h6 { font-size: 0.9rem;}
 
 p {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 1rem;
-  margin-bottom: 1em;
+  line-height: 1.2em;
 }
 
 
@@ -230,7 +235,6 @@ p {
 #headerLOGO a {
   display:flex;
   align-items: center;
-  font-size: 1.5rem;
 }
 
 #headerLOGO img {
@@ -347,205 +351,6 @@ p {
 }
 
 
-/*--------------------------------------------*/
-/*---------------MAIN CONTENT-----------------*/
-/*--------------------------------------------*/
-
-#mainContent {
-  margin-top:var(--header-height)!important;
-}
-
-@media screeen and (min-wIdth: 992px) {
-  #mainContent {
-    margin-top: calc(var(--header-height)+2rem)
-  }
-}
-
-
-
-
-/*! NOTE: These are just recommended default global styles, edit as required */
-
-::selection { /* Optional */
-  /* It can be really hard to read highlighted text with a text-shadow, it should be removed when selected */
-  text-shadow: none;
-  
-  /* NOTE: Using this means the color and background-color are set to transparent for selected text... */
-  /* So you can customise your styles below */
-  color: #fff;
-  background-color: #00f;
-}
-
-html {
-  /* Make base font-size 100% of browser font-size */
-  font-size: 100%;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth; /* Smoothly animate to different sections within a page, only if the user doesn't mind animations */
-  }
-}
-
-*,
-*::before,
-*::after,
-html {
-  /* Declare your box-sizing here
-  /* https://css-tricks.com/box-sizing */
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  /* outras opções - content-box */
-}
-
-body {
-  /* Declare your default font stack here */
-  font-family: "Font Stack", sans-serif, serif, monospace, cursive, fantasy;
-  /* outras opções - serif, monospace, cursive, fantasy */
-
-  /* Better text rendering - font-smoothing has not been officially declared, but can still be useful */
-  text-rendering: geometricPrecision;
-  /* outras opções -optimizeLegibility | optimizeSpeed */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-img {
-  /* For responsive images that adjust & adapt */
-  height: auto;
-  max-width: 100%;
-  
-  /* This isn't needed, but as a user, I get frustrated when I highlight text and the image gets highlighted too */
-  user-select: none;
-}
-
-button {
-  color: inherit; /* By default, buttons don't inherit the font colour, this is a useful default to override */
-}
-
-a, button {
-  touch-action: manipulation; /* Element doesn't want double-tap on mobile to zoom */
-}
-
-svg {
-  /* Make the SVGs fit the parent container by default */
-  height: 100%;
-  width: 100%;
-  
-  /* Optional - make the SVG's fill be the same as the inherited color */
-  fill: currentColor;
-  
-  /* Prevent the SVG from altering cursor interaction */
-  pointer-events: none;
-}
-
-iframe, video {
-  /* Make iframes & videos fit the parent container by default */
-  height: 100%;
-  width: 100%
-}
-
-/**************************************************
-***************************************************
-*********** YOUR STYLES GO AFTER THIS *************
-***************************************************
-***************************************************/
-
-:root {
-  --header-height: 3.5rem; 
-  /* TITLES, TEXT, LINES */
-  --primary-color: #01151D;
-
-  /* Primary - BACKGROUND,  */
-  --secondary-color: #F0EFED;
-
-  /* Secondary - LINKS, SVG ELEMENTS, Button */
-  --pop-color: #0B12EE;  
-
-  --font-weight-regular: 400;
-  --font-weight-bold: 500;
-
-  /*----- z index -----*/
-  --z-tooltip: 10;
-  --z-fixed: 100;
-}
-
-
-body {
-  font-family: "Bricolage Grotesque",Helvetica, Arial, sans-serif;
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
-}
-
-small{
-  font-size: 0.875rem;
-}
-
-strong {
-  font-weight: 500;
-}
-
-ul {
-  list-style: none;
-}
-
-h1 {
-  font-family: "Bricolage Grotesque", Helvetica, Arial, sans-serif;
-  letter-spacing: -0.05em;
-}
-
-h2, h3, h4, h5, h6 {
-  font-family: Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: var(--primary-color);
-}
-
-a:hover a:active, a.active {
-  color: var(--pop-color);
-}
-
-/***Spacing***/
-
-.space-S{
-  height: 30px;
-}
-
-.space-M{
-  height: 60px;
-}
-
-.space-L{
-  height: 90px;
-}
-
-.space-XL{
-  height: 120px;
-}
-
-/* scale */
-h1 { font-size: 3.5rem; font-weight: 500; }
-h2 { font-size: 2rem; font-weight: var( --font-weight-regular); }
-h3 { font-size: 1.25rem; font-weight: var( --font-weight-regular); }
-h4 { font-size: 1.375rem; font-weight: var( --font-weight-regular); }
-h5 { font-size: 1.125rem; font-weight: var( --font-weight-regular); }
-h6 { font-size: 0.9rem; font-weight: var( --font-weight-regular); }
-
-p {
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  margin-bottom: 1em;
-}
-
-
-/* body header, body main, body footer {
-  width: 100%;
-  max-width: 1680px;
-  margin: 0 auto;
-  padding 0 16px;
-} */
 
 .pageWidth {
   width: 100%;
@@ -771,9 +576,11 @@ h1.heading-text span {
     color: var(--secondary-color)
 }
 
-h3.white-text {
-    color: var(--secondary-color);
-    font-size: 1.25rem;
+h2.subtitle {
+    font-family: "Bricolage Grotesque", Helvetica, Arial, sans-serif;
+    color: var(--primary-color);
+    font-size: 1.75rem;
+    font-weight: var(--font-weight-bold);
 }
 
 p.description {
@@ -810,16 +617,17 @@ p.description {
   right: -16px;
 }
 
+/** Alignments **/
+
+.text_center {
+    text-align: center;
+}
+
 /********cards*********/
 
 .container {
     --gap: 0;
-    padding: 2rem;
-}
-
-.flex {
-    display: flex;
-    gap: var(--gap, 1em);
+    padding: 1.25rem;
 }
 
 .box_outline {
@@ -830,9 +638,56 @@ p.description {
     border-radius: 8px;
 }
 
+.flex {
+    display: flex;
+    gap: var(--gap, 1em);
+}
+
 .flex-column {
     flex-direction: column;
-    margin-left: auto;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    flex: 1;
+}
+
+/* ------ Container style ------*/
+
+.cards-3col {
+  display: flex;
+  gap: 1rem;
+}
+
+.container article {
+  --gap: 2em;
+  line-height: 1.5;
+  padding: 2rem;
+}
+.container article > img {
+  width: 4rem;
+}
+
+
+@media screen and (max-width: 992px) {
+  .container .flex{
+    flex-direction: column;
+    max-width: 100%;
+    min-width: 90%;
+  }
+  .container article {
+    width:100%;
+  }
+
+  /*
+  .container article:first-child {
+    border-radius: 0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  .container article:last-child {
+    border-radius: 0;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }*/
 }
 
 
