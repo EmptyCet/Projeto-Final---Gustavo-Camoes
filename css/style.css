@@ -135,9 +135,10 @@ h2, h3, h4, h5, h6 {
 
 a {
   color: var(--primary-color);
+  text-decoration: none;
 }
 
-a:hover a:active, a.active {
+a:hover, a:active, a.active {
   color: var(--pop-color);
 }
 
@@ -355,11 +356,39 @@ p {
   margin-top:var(--header-height)!important;
 }
 
-@media screeen and (min-wIdth: 992px) {
+@media screen and (min-width: 992px) {
   #mainContent {
     margin-top: calc(var(--header-height)+2rem)
   }
+  
+  .hero-nav.mobile{display: none;}
 }
+
+
+@media screen and (max-width: 992px) {
+    .hero-nav.desktop{display: none;}
+}
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-nav {
+  font-size: 3rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--primary-color);
+}
+
+.doodle-text {}
 
 
 
