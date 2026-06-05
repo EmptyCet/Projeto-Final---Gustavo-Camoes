@@ -117,7 +117,7 @@ small{
 }
 
 strong {
-  font-weight: 500;
+  font-weight: var(--font-weight-bold);
 }
 
 ul {
@@ -126,7 +126,7 @@ ul {
 
 h1 {
   font-family: "Bricolage Grotesque", Helvetica, Arial, sans-serif;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.04em;
 }
 
 h2, h3, h4, h5, h6 {
@@ -161,7 +161,8 @@ a:hover, a:active, a.active {
 }
 
 
-/* scale */
+/* h Text scaling */
+
 h1 { font-size: 3.5rem; font-weight: 500; }
 h2 { font-size: 2.25rem; font-weight: var( --font-weight-regular); }
 h3 { font-size: 1.75rem; font-weight: var( --font-weight-regular); }
@@ -175,6 +176,16 @@ p {
   margin-bottom: 1em;
 }
 
+.light {
+    font-weight: 300;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+
+/*what?*/
 
 /* body header, body main, body footer {
   width: 100%;
@@ -361,34 +372,88 @@ p {
     margin-top: calc(var(--header-height)+2rem)
   }
   
-  .hero-nav.mobile{display: none;}
+  .hero-nav.mobile {display: none;}
 }
 
-
+/*HERO SECTION STYLES*/
 @media screen and (max-width: 992px) {
-    .hero-nav.desktop{display: none;}
+  .hero-nav.desktop {display: none;}
+
+  .hero-nav.mobile {
+    display: flex;
+    gap: 1rem;
+    line-height: 4rem;
+  }
+
+  .hero-title.mobile {
+    font-size: 5rem;
+    font-weight: 350;
+  }
 }
+
+.hero-nav.desktop div {
+    margin-bottom: -1rem; /*Espaço entre os títulos (dado que gap negativa não funciona)*/
+}
+
+.hero-nav.desktop div:first-child {
+    transform: translateX(-8px);
+}
+
+
+.hero-nav.desktop div {
+    margin-top: -1rem; /*Espaço entre os títulos (dado que gap negativa não funciona)*/
+}
+
 .hero {
     min-height: 100vh;
-
     display: flex;
     justify-content: center;
     align-items: center;
+    user-select: none;
+
 }
 
 .hero-nav {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    transform: translateY(2rem);
 }
 
-.title-nav {
-  font-size: 3rem;
-  font-weight: var(--font-weight-bold);
-  color: var(--primary-color);
+.hero-title {
+    font-size: 8rem;
+    font-weight: 350;
 }
 
-.doodle-text {}
+.doodle-text {
+  width: 24rem;
+  user-select: none;
+}
+
+.doodle-text.about {
+  transform: translateX(26rem) translateY(-30px);
+}
+
+.doodle-text.projects {
+  transform: translateX(26rem) translateY(30px);
+}
+
+.doodle-star {
+  display: flex;
+  align-items: center;
+  user-select: none;
+  transform: translateY(-7px);
+}
+
+
+
+
+
+
+
+
+
 
 
 
