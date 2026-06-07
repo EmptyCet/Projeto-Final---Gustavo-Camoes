@@ -17,7 +17,7 @@ const showMenu=(toggleId, navId) =>{
 showMenu('nav-toggle','navMenu')
 
 
-/* Evitar Artefacto visual do menu */
+/* ------ Evitar Artefacto visual do menu ------ */
 let resizeTimer; /*variável de timer*/
 
 window.addEventListener('resize', () => {  /*quando a janela está a ser resized*/
