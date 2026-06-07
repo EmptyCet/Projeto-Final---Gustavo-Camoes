@@ -9,7 +9,26 @@ const showMenu=(toggleId, navId) =>{
 
        // Add show-icon to show and hide the menu icon
        toggle.classList.toggle('show-icon')
+
+       
    })
 }
 
 showMenu('nav-toggle','navMenu')
+
+
+/* Evitar Artefacto visual do menu */
+let resizeTimer; /*variável de timer*/
+
+window.addEventListener('resize', () => {  /*quando a janela está a ser resized*/
+  document.body.classList.add('is-resizing'); /*adiciona a classe .is-resizing ao body*/
+
+  clearTimeout(resizeTimer); /*cancela o timer anterior, para estar sempre em effeito o timer mais recente*/
+
+  resizeTimer = setTimeout(() => { /*é establecido que a variável começa um timer*/
+    document.body.classList.remove('is-resizing'); /*remove a classe .is-resizing ao body*/
+  }, 200); /*depois de 200ms*/      
+});
+
+/*Basicamente, equanto forem detetados inputs de resize, é começado um timer de 200ms em que a animação é feita inativa,
+então só quando o utilizador para de fazer resize, o ultimo timer de 200ms passa, e ao passar, é removida a classe .is-resizing*/

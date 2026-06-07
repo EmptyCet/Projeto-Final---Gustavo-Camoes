@@ -214,7 +214,6 @@ p {
   background: #a5a5a5;
 }
 
-
 .pageWidth {
   width: 100%;
   max-width: 1680px;
@@ -240,6 +239,7 @@ p {
   max-width: 1680px;
   margin: 0 auto;
   padding: 0 16px;
+  background-color: var(--secondary-color);
 }
 
 /* Header Styles */
@@ -301,6 +301,10 @@ p {
 
 /*HEADER navigation for MOBILE*/
 
+body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é ativada com o js, durante o resize da janela*/ 
+  transition: none !important;
+}
+
 @media screen and (max-width: 992px) {
   .nav__menu {
     position: absolute;
@@ -309,9 +313,19 @@ p {
     width: 100%;
     height: calc(100vh - 3.5rem);
     overflow: auto;
-    pointer-events: none;
-    opacity: 0;
+    z-index: -1;
+
+/*Mobile Menu Animation*/
+    transform: translateY(-100%);
     transition:
+      transform 300ms ease;
+  }
+
+  /* Show menu */ 
+  .nav__menu.show-menu {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: initial;  
   }
 
   #mainMenu {
@@ -349,10 +363,9 @@ p {
   color: var(--pop-color);
 }
 
-/* Show menu */
-.show-menu {
+.nav__menu.show-menu {
+  transform: translateY(0);
   opacity: 1;
-  top: 3.5rem;
   pointer-events: initial;
 }
 
