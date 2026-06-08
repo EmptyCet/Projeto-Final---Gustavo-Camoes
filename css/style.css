@@ -476,13 +476,13 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   min-height: 100vh;
   height: 100vh;
   width: 100%;
-  padding-top: calc(var(--header-height) + 16vh);
+  padding-top: calc(var(--header-height));
   max-width: 1680px;
 
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   user-select: none;
   margin: 0 auto; 
 }
@@ -673,7 +673,7 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   .hero-nav.desktop {display: none;}
 
   .hero {
-    padding: 8vh 0 4vh 0;
+    padding: 8vh 0 8vh 0;
   }
 
   .hero-nav.mobile {
