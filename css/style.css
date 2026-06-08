@@ -524,9 +524,10 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 
 /*-----Projects-----*/
 
-#projects-preview {
+#projects-preview {       /* Section */
   background-color: var(--primary-color);
   min-height: 100vh;
+  margin-top: 2rem;
 }
 
 .projects-grid {
