@@ -477,7 +477,8 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
     display: flex;
     width: 100%;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    padding-top: 2vh;
     user-select: none;
     max-width: 1680px;
     margin: 0 auto; 
@@ -494,24 +495,27 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 
 
 .hero-title {
-    font-size: 8rem;
-    font-weight: 350;
-    margin: 0;
-    line-height: 0.75;
-    display: inline-block;
-    pointer-events: none;
+  font-size: 8rem;
+  font-weight: 350;
+  margin: 0;
+  line-height: 0.75;
+  display: inline-block;
+  pointer-events: none;
 }
 
 .doodle-text {
   width: 24rem;
+  height: 100%;
   user-select: none;
 }
 
 .doodle-container {
   width: 100%;
   display: flex;
+  padding-right: 8rem;
+  align-items: column;
   justify-content: flex-end;
-  padding: 1rem 12rem 1rem 0;
+  align-items: flex-end;
 }
 
 .hero-title-container {
@@ -526,10 +530,8 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 }
 
 .doodle-star {
-  display: flex;
-  align-items: center;
   user-select: none;
-  transform: translateY(-7px);
+  transform: translateY(-2px);
 }
 
 /*-----Projects-----*/
@@ -659,18 +661,18 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 /*-----------MEDIA QUERIES (MOBILE)-----------*/
 /*--------------------------------------------*/
 
-@media screen and (max-height: 900px) {
+/* @media screen and (max-height: 900px) {
   .doodle-text {
-   height: 24vh;
+   height: 200px;
   }
-}
+} */
 
 @media screen and (max-width: 992px) {
   .hero-nav.desktop {display: none;}
 
   .hero-nav.mobile {
-    display: flex;
-    gap: 0.2rem;
+    display: flex;   
+    gap: 0.8rem;
     line-height: 4rem;
   }
 
@@ -680,10 +682,27 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   }
 
   .doodle-star {
-    display: flex;
-    align-items: center;
     user-select: none;
-    transform: translateY(-12px);
+  }
+
+  .hero-title-container-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-block: -0.3rem;
+    padding: 0 auto;        
+  }
+
+  .doodle-text {
+   height: 60%;
+  }
+
+  .doodle-container {
+    width: 80%;
+    padding: 0;
+    display: flex;
+    justify-content: center !important;
   }
 
   /*Projects-grid - MOBILE*/
