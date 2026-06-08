@@ -550,6 +550,12 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   display: block;
 }
 
+@media screen and (max-height: 900px) {
+  .doodle-text {
+   height: 24vh;
+  }
+}
+
 @media screen and (max-width: 992px) {
   .hero-nav.desktop {display: none;}
 
