@@ -582,15 +582,18 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 
 /*-----Projects-----*/
 
+.projects-page #projects-preview {
+  padding-top: calc(var(--header-height) + var(--padding-L) + 0.2rem) !important;
+}
+
 #projects-preview { /* Section */
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 2rem;
   min-height: 100vh;
-  margin-top: 2rem;
   /* padding: 2rem; */
-  padding: 2rem 0 2rem 0;
-
+  padding: var(--padding-L) 0;
   background-color: var(--primary-color);
 }
 
@@ -604,7 +607,8 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
-  padding: 0 1rem 0 1rem ;
+  padding: 0 var(--padding-M);
+  max-width: 1680px;
   /* padding: 0 1rem 0 1rem; */
   /* transform: translateY(-2rem); */
 }
@@ -703,12 +707,12 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 }
 
 .tag-branding {
-  background-color: #FF7A00;
+  background-color: #5fff3f;
   color: #000;
 }
 
 .tag-spacial {
-  background-color: #8EFF3F;
+  background-color: #ff941b;
   color: #000;
 }
 
@@ -718,7 +722,12 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 }
 
 .tag-experimental {
-  background-color: #FF1DFF;
+  background-color: #ff35ff;
+  color: #000;
+}
+
+.tag-uiux {
+  background-color: #dc2bff;
   color: #000;
 }
 
@@ -730,7 +739,7 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding-top: 3rem;
+  padding-top: var(--padding-XL);
 
   background-color: var(--secondary-color);
 
@@ -747,7 +756,7 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   position: relative;
   display: flex;
   align-items: center;
-  padding: 0 3rem 0 3rem;
+  padding: 0 var(--padding-XL);
   border-right: var(--border-line);
   border-left: var(--border-line);
   text-transform: uppercase;
@@ -941,10 +950,11 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
     min-height: 100vh;
     margin-top: var(--header-height);
   }
+  
   .projects-grid {
     display: grid;
     grid-template-columns: 1fr;
-    padding: 0 1rem 0 1rem;
+    padding: 1rem;
   }
 
   /*Footer - MOBILE*/

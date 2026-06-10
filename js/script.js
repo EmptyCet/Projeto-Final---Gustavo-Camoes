@@ -33,13 +33,6 @@ window.addEventListener('resize', () => {  /*quando a janela está a ser resized
 /*Basicamente, equanto forem detetados inputs de resize, é começado um timer de 200ms em que a animação é feita inativa,
 então só quando o utilizador para de fazer resize, o ultimo timer de 200ms passa, e ao passar, é removida a classe .is-resizing*/
 
-
-/* ------ Footer Year Update ------ */
-
-document.getElementById("current-year").textContent =   /*encontra o elemento com o id 'current-year' (está no footer) e o texto dentro dele*/
-  new Date().getFullYear();  /*dá set do texto para o ano atual*/
-
-
   
 /* ------ Cards Hover ------ */
 const cards = document.querySelectorAll(".project-card");
@@ -79,3 +72,9 @@ cards.forEach(card => {
     }
   });
 });
+
+
+/* ------ Footer Year Update ------ */
+
+document.getElementById("current-year").textContent =   /*encontra o elemento com o id 'current-year' (está no footer) e o texto dentro dele*/
+  new Date().getFullYear();  /*dá set do texto para o ano atual*/
