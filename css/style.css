@@ -125,7 +125,14 @@ iframe, video {
   --border-color-light: color-mix(in srgb, var(--secondary-color) 50%, transparent);
   --border-line-light: 2px solid var(--border-color-light);
 
+  /* Paddings */
   --footer-padding: 5rem;
+
+  --padding-S: 0.5rem;
+  --padding-M: 1rem;
+  --padding-L: 2rem;
+  --padding-XL: 3rem;
+
 }
 
 
@@ -157,14 +164,21 @@ h2, h3, h4, h5, h6 {
 }
 
 a {
+  color: inherit;
   color: var(--primary-color);
   text-decoration: none;
 }
 
-
-a:hover, a:active, a.active {
-  color: var(--pop-color);
+header a:hover,
+footer a:hover {
+  color: blue;
 }
+
+
+/* a:hover, a:active, a.active {
+  color: var(--pop-color);
+} */
+
 
 /***Spacing***/
 
@@ -329,7 +343,7 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   transition: none !important;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 991px) {
   .nav__menu {
     position: absolute;
     left: 0;
@@ -370,17 +384,19 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 
   .nav__link {
     border-bottom: var(--border-line);
+    padding: var(--padding-M) var(--padding-L);
   }
 }
 
 .nav__link {
-  color: var(--primary-color);
-  font-weight: var(--font-weight-bold);
-  background-color: var(--secondary-color);
-  padding: 1.25rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 100%;
+  border-left: var(--border-line);
+  color: var(--primary-color);
+  font-weight: var(--font-weight-bold);
+  background-color: var(--secondary-color);
 }
 
 .nav__link:hover {
@@ -425,11 +441,10 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
     height:100%;
     display: flex;
   }
+
   .nav__link {
-    height: 100%;
-    padding: 1.25rem 2rem;
-    border-left: var(--border-line);
-  }
+    padding: 0 var(--padding-L);
+  } 
 
   .nav__list li:last-child {
     border-right: var(--border-line);
@@ -456,7 +471,7 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 
 .button-text {
   display: inline-block;
-  padding: 1rem 3rem;
+  padding: var(--padding-M) var(--padding-XL);
 
   color: var(--primary-color);
   border-right: var(--border-line);
@@ -589,6 +604,7 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
+  padding: 0 1rem 0 1rem ;
   /* padding: 0 1rem 0 1rem; */
   /* transform: translateY(-2rem); */
 }
@@ -596,7 +612,8 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 .project-card {
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  border-radius: 0.1rem;
+  border-radius: 0.2rem;
+  position: relative;
 }
 
 .project-card img {
@@ -604,6 +621,77 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+/* -------- PROJECT INFO --------- */
+
+.project-card-info {
+  display: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  border-bottom: var(--border-line);
+  background-color: var(--secondary-color);
+}
+
+.project-card:hover .project-card-info {
+  display: flex;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.project-card-title {
+  padding: var(--padding-S) var(--padding-L);
+  margin: 0 var(--padding-S);
+  text-transform: uppercase;
+  letter-spacing: -0.05rem;
+  font-weight: 600;
+
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border-left: var(--border-line);
+  border-right: var(--border-line);
+}
+
+.tag {
+  flex-grow: 1;
+  white-space: nowrap;
+  text-align: center;
+  padding: var(--padding-S);
+  text-transform: lowercase;
+  letter-spacing: -0.05rem;
+  font-weight: 500;
+}
+
+.tag-graphic {
+  background-color: #FFD400;
+  color: #000;
+}
+
+.tag-motion {
+  background-color: #0A8DFF;
+  color: #000;
+}
+
+.tag-branding {
+  background-color: #FF7A00;
+  color: #000;
+}
+
+.tag-spacial {
+  background-color: #8EFF3F;
+  color: #000;
+}
+
+.tag-editorial {
+  background-color: #33C7FF;
+  color: #000;
+}
+
+.tag-experimental {
+  background-color: #FF1DFF;
+  color: #000;
 }
 
 
@@ -741,7 +829,7 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   height: 100vh;
 }
 
-.p5Canvas {
+#defaultCanvas0 {
   transform: rotate(2deg);
   border-radius: 0.5rem;
   border: var(--border-line); 
