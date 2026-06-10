@@ -691,6 +691,20 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   transform: translateY(60%) rotate(2deg);
 }
 
+/*--- Processing ---*/
+
+.processingCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.divCanvas {
+  transform: rotate(2deg);
+}
+
+
 
 /*--------------------------------------------*/
 /*-----------MEDIA QUERIES (MOBILE)-----------*/
