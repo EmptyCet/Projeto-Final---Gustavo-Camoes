@@ -42,19 +42,40 @@ document.getElementById("current-year").textContent =   /*encontra o elemento co
 
   
 /* ------ Cards Hover ------ */
-
 const cards = document.querySelectorAll(".project-card");
 
 cards.forEach(card => {
   const info = card.querySelector(".project-card-info");
 
-  card.addEventListener("mousemove", (e) => {
+  let lastMouseEvent = null;
+
+  function moveInfo(e) {
     const rect = card.getBoundingClientRect();
 
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    let x = e.clientX - rect.left;
+    let y = e.clientY - rect.top;
+
+    const infoWidth = info.offsetWidth;
+    const gap = 20;
+
+    if (e.clientX + infoWidth + gap > window.innerWidth) {
+      x -= infoWidth + gap;
+    } else {
+      x += gap;
+    }
 
     info.style.left = `${x}px`;
     info.style.top = `${y}px`;
+  }
+
+  card.addEventListener("mousemove", (e) => {
+    lastMouseEvent = e;
+    moveInfo(e);
+  });
+
+  window.addEventListener("scroll", () => {
+    if (lastMouseEvent) {
+      moveInfo(lastMouseEvent);
+    }
   });
 });
