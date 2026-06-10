@@ -122,6 +122,9 @@ iframe, video {
   --border-color: color-mix(in srgb, var(--primary-color) 50%, transparent);
   --border-line: 2px solid var(--border-color);
 
+  --border-color-light: color-mix(in srgb, var(--secondary-color) 50%, transparent);
+  --border-line-light: 2px solid var(--border-color-light);
+
   --footer-padding: 5rem;
 }
 
@@ -445,6 +448,32 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   margin-top:var(--header-height)!important;
 }
 
+.button-rail {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.button-text {
+  display: inline-block;
+  padding: 1rem 3rem;
+
+  color: var(--primary-color);
+  border-right: var(--border-line);
+  border-left: var(--border-line);
+}
+
+.button-text.light {
+  color: var(--secondary-color);
+  border-right: var(--border-line-light);
+  border-left: var(--border-line-light);
+}
+
+.button-rail.light {
+  border-bottom: var(--border-line-light);
+  border-top: var(--border-line-light);
+}
+
 /*para utilizadores com ecrãns abaixo de 355px (base de utilizadores crucial)*/
 @media screen and (max-width: 355px) { 
  .hero-title.mobile {
@@ -463,8 +492,8 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 }
 
 
-/*MOBILE display*/
 
+/*MOBILE display*/
 
 /*HERO SECTION STYLES*/
   
@@ -538,18 +567,30 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 
 /*-----Projects-----*/
 
-#projects-preview {       /* Section */
-  background-color: var(--primary-color);
+#projects-preview { /* Section */
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   min-height: 100vh;
   margin-top: 2rem;
+  /* padding: 2rem; */
+  padding: 2rem 0 2rem 0;
+
+  background-color: var(--primary-color);
+}
+
+#projects-preview > h2 {
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--secondary-color);
 }
 
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
-  padding: 1rem;
-  transform: translateY(-2rem);
+  /* padding: 0 1rem 0 1rem; */
+  /* transform: translateY(-2rem); */
 }
 
 .project-card {
@@ -643,14 +684,14 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   border-top: var(--border-line);
 }
 
-.footer-item a {
+/* .footer-item a {
   display: inline-block;
   padding: 1rem 3rem;
 
   color: var(--primary-color);
   border-right: var(--border-line);
   border-left: var(--border-line);
-}
+} */
 
 .footer-info {
   width: 100%;
@@ -700,9 +741,12 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   height: 100vh;
 }
 
-.divCanvas {
+.p5Canvas {
   transform: rotate(2deg);
+  border-radius: 0.5rem;
+  border: var(--border-line); 
 }
+
 
 
 
@@ -775,6 +819,8 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   /*Projects-grid - MOBILE*/
 
   #projects-preview {
+    display: flex;
+    flex-direction: column;
     background-color: var(--primary-color);
     min-height: 100vh;
     margin-top: var(--header-height);
@@ -782,7 +828,7 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   .projects-grid {
     display: grid;
     grid-template-columns: 1fr;
-    padding: 1rem;
+    padding: 0 1rem 0 1rem;
   }
 
   /*Footer - MOBILE*/
@@ -836,5 +882,21 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 
   .footer-item:nth-child(4) {
     padding-left: calc(var(--footer-padding) + 2vw); /*About Me*/
+  }
+}
+
+@media screen and (max-width: 720px) {
+    /* Processing */
+
+  #defaultCanvas0 {
+    width: 150vw !important;
+    aspect-ratio: 720 / 400;
+    height: auto !important;
+    display: block;
+    transform: translateY(2rem) rotate(91deg);
+  }
+
+  .processingCenter {
+    padding: 1rem;
   }
 }
