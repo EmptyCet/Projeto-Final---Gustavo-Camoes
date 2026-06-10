@@ -38,3 +38,23 @@ então só quando o utilizador para de fazer resize, o ultimo timer de 200ms pas
 
 document.getElementById("current-year").textContent =   /*encontra o elemento com o id 'current-year' (está no footer) e o texto dentro dele*/
   new Date().getFullYear();  /*dá set do texto para o ano atual*/
+
+
+  
+/* ------ Cards Hover ------ */
+
+const cards = document.querySelectorAll(".project-card");
+
+cards.forEach(card => {
+  const info = card.querySelector(".project-card-info");
+
+  card.addEventListener("mousemove", (e) => {
+    const rect = card.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    info.style.left = `${x}px`;
+    info.style.top = `${y}px`;
+  });
+});

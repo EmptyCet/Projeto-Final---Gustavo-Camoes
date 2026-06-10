@@ -611,8 +611,8 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 
 .project-card {
   aspect-ratio: 4 / 3;
-  overflow: hidden;
-  border-radius: 0.2rem;
+  overflow: visible;
+  border-radius: 5rem;
   position: relative;
 }
 
@@ -628,22 +628,39 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 .project-card-info {
   display: none;
   position: absolute;
+  pointer-events: none;
+
   top: 0;
-  width: 100%;
-  border-bottom: var(--border-line);
+  width: max-content;
+
+  border: var(--border-line);
   background-color: var(--secondary-color);
 }
 
 .project-card:hover .project-card-info {
-  display: flex;
-  position: absolute;
-  top: 0;
+  display: inline-flex;
+  flex-direction: column;
+
+  width: max-content;
+  transform: translateY(-100%);
+  z-index: 5;
+}
+
+.project-card-title-container {
+  padding: 0 var(--padding-S);
+  text-align: center;
+  white-space: nowrap;
   width: 100%;
 }
 
 .project-card-title {
+  display: block;
   padding: var(--padding-S) var(--padding-L);
-  margin: 0 var(--padding-S);
+  width: 100%;
+
+  text-align: center;
+  white-space: nowrap;
+
   text-transform: uppercase;
   letter-spacing: -0.05rem;
   font-weight: 600;
@@ -654,11 +671,22 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   border-right: var(--border-line);
 }
 
+.tag-container {
+  display: flex;
+  flex-wrap: nowrap;
+
+  width: 100%;
+}
+
 .tag {
-  flex-grow: 1;
-  white-space: nowrap;
+  flex: 1 1 auto; 
+
   text-align: center;
-  padding: var(--padding-S);
+  padding: var(--padding-S) var(--padding-M);
+
+  white-space: nowrap;
+  box-sizing: border-box;
+
   text-transform: lowercase;
   letter-spacing: -0.05rem;
   font-weight: 500;
