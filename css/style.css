@@ -125,12 +125,16 @@ iframe, video {
   --border-color: color-mix(in srgb, var(--primary-color) 50%, transparent);
   --border-line: 2px solid var(--border-color);
 
+  --border-color: color-mix(in srgb, var(--primary-color) 30%, transparent);
+  --border-line-thin: 2px solid var(--border-color);
+
   --border-color-light: color-mix(in srgb, var(--secondary-color) 50%, transparent);
   --border-line-light: 2px solid var(--border-color-light);
 
   /* Paddings */
   --footer-padding: 5rem;
 
+  --padding-XS: 0.25rem;
   --padding-S: 0.5rem;
   --padding-M: 1rem;
   --padding-L: 2rem;
@@ -140,7 +144,7 @@ iframe, video {
 
 
 body {
-  font-family: "Bricolage Grotesque",Helvetica, Arial, sans-serif;
+  font-family: "Bricolage Grotesque", Helvetica, Arial, sans-serif;
   background-color: var(--secondary-color);
   color: var(--primary-color);
 }
@@ -235,9 +239,9 @@ h6 { font-size: 0.9rem; font-weight: var( --font-weight-regular); }
 }
 
 p {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "Inter", Helvetica, Arial, sans-serif;
   font-size: 1rem;
-  letter-spacing: 0rem;
+  letter-spacing: -0.05rem;
 }
 
 .italic {
@@ -452,6 +456,11 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   .navAction strong {
     font-size: 1.5rem;
   }
+
+  .about-me-text p {
+    padding-right: 0 !important;
+  }
+
 }
 
 /*navigation for desktop*/
@@ -957,6 +966,12 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   width: 100%;
 }
 
+#portrait-images {
+  display: flex;
+  flex-direction: row;
+  height: 16rem;
+}
+
 .about-me-container {
   display: flex;
   justify-content: space-between;
@@ -968,18 +983,26 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 }
 
 .about-me-text {
-  max-width: 32rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-L);
+  max-width: 30vw;
 }
+
+/* .about-me-text p {
+  padding-right: 8rem;
+} */
 
 .title-with-icon {
   display: flex;
   align-items: center;
-  gap: var(--padding-S);
+  gap: var(--padding-L);
 }
 
 .about-me-image {
-  width: 12rem;
-  max-width: 30%;
+  width: 100%;
+  aspect-ratio: 3 / 5;
+  object-fit: cover;
 }
 
 .about-info-container {
@@ -988,15 +1011,33 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   border-left: var(--border-line);
 }
 
+.about-box {
+  padding: var(--padding-L);
+}
+
 .interests-skills-column {
-  flex: 1;
   display: flex;
+
+  width: max-content;
   flex-direction: column;
   border-right: var(--border-line);
 }
 
-.about-box {
-  padding: var(--padding-L);
+.interests-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 30vw;
+  gap: var(--padding-S);
+  margin-top: var(--padding-L);
+}
+
+.interest-single {
+  display: inline;
+  padding: 0.2rem 1rem;
+
+  border: var(--border-line-thin);
+  border-radius: 999px;
+  white-space: nowrap;
 }
 
 .interests-box, .skills-box {
@@ -1004,32 +1045,33 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 }
 
 .skills-box {
+  display: flex;
+  flex-direction: row;
+  gap: 8vw;
   border-top: var(--border-line);
+  padding-bottom: 5rem;
+}
+
+.soft-skills p {
+  font-style: italic;
+}
+
+.soft-skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .education-box {
-  flex: 1;
-}
-
-.interests-list {
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--padding-S);
-  margin-top: var(--padding-L);
-}
-
-.interest-single {
-  padding: 0.2rem 1rem;
-  border: var(--border-line);
-  border-radius: 999px;
-  white-space: nowrap;
+  flex-direction: column;
+  flex: 1;
 }
 
 .skills-content {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  gap: var(--padding-L);
-  margin-top: var(--padding-M);
 }
 
 .software-icons {
@@ -1038,18 +1080,45 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 }
 
 .software-icons img {
-  width: 3rem;
+  width: 4rem;
 }
 
 .education-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--padding-XS);
   margin-top: var(--padding-XL);
+}
+
+.school-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-XS);
+}
+
+.school-logo {
+  width: 5rem;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.school-name {
+  font-style: italic;
+}
+
+#ipl-logo {
+  width: 4rem;
 }
 
 .doodle-icon {
   width: 2rem;
 }
 
-
+.education-box .education-item:nth-child(2) {
+  margin-top: var(--padding-L);
+}
 
 /*-----Footer-----*/
 
@@ -1421,6 +1490,8 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   .about-info-container,
   .skills-content {
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 
   .about-me-image {

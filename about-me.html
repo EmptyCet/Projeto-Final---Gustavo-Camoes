@@ -20,6 +20,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     </head>
 
     <body>
@@ -71,14 +72,17 @@
                                     <h1 class="project-hero-title">ABOUT ME</h1>
                                     <img class="doodle-icon" src="imagens/star.svg" alt="">
                                 </div>
-            
+                                
                                 <p>
-                                    Hi! My name is Gustavo Camões, I’m an aspiring graphic designer & artist from Portugal, and this
+                                    Hi! My name is Gustavo Camões, I’m an aspiring graphic designer & artist from Portugal,  and this
                                     is my design portfolio!
                                 </p>
                             </div>
-            
-                            <img class="about-me-image" src="imagens/about-me-face.svg" alt="">
+                            <div id="portrait-images">
+                                <img id="secondary-1" class="about-me-image" src="imagens\me_portrait.jpeg" alt="Gustavo Camões, the one and only">
+                                <img id="main-portrait"class="about-me-image" src="imagens\me_portrait_active.jpg" alt="Gustavo Camões, the one and only, jumping">
+                                <img id="secondary-2" class="about-me-image" src="imagens\me_portrait3.jpg" alt="Gustavo Camões, the one and only, rocking a cool outfit">
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -92,38 +96,38 @@
                                 <div class="interests-box about-box">
                                     <div class="title-with-icon">
                                         <h2 class="subtitle">INTERESTS</h2>
-                                        <img class="doodle-icon" src="imagens/sparkle.svg" alt="">
+                                        <img class="doodle-icon" src="imagens/interests-icon.svg" alt="sparkle">
                                     </div>
             
                                     <div class="interests-list">
-                                        <span class="interest-single">UI / UX</span>
-                                        <span class="interest-single">Graphic Design</span>
-                                        <span class="interest-single">Motion Graphics</span>
-                                        <span class="interest-single">Art & Illustration</span>
+                                        <p class="interest-single">Graphic Design</p>
+                                        <p class="interest-single">Motion Graphics</p>
+                                        <p class="interest-single">UI / UX</p>
+                                        <p class="interest-single">Art & Illustration</p>
                                     </div>
                                 </div>
             
                                 <div class="skills-box about-box">
-                                    <div class="title-with-icon">
-                                        <h4 class="subtitle-small">Technical & Soft Skills</p>
-                                            <img class="doodle-icon" src="imagens/wrench.svg" alt="">
-                                    </div>
             
                                     <div class="skills-content">
+                                        <div class="title-with-icon">
+                                            <h4 class="subtitle-small">Technical & Soft Skills</h4>
+                                            <img class="doodle-icon" src="imagens/wrench-icon.svg" alt="wrench">
+                                        </div>
                                         <div class="software-icons">
-                                            <img src="imagens/photoshop.svg" alt="Photoshop">
-                                            <img src="imagens/illustrator.svg" alt="Illustrator">
-                                            <img src="imagens/after-effects.svg" alt="After Effects">
-                                            <img src="imagens/figma.svg" alt="Figma">
+                                            <img src="imagens/photoshop_logo.png" alt="Photoshop">
+                                            <img src="imagens/illustrator_logo.png" alt="Illustrator">
+                                            <img src="imagens/ae_logo.png" alt="After Effects">
+                                            <img src="imagens/figma_logo.png" alt="Figma">
                                         </div>
-            
-                                        <div class="soft-skills">
-                                            <p>Fluent English</p>
-                                            <p>Fluent Portuguese</p>
-                                            <p>Organized</p>
-                                            <p>Dedicated</p>
-                                            <p>Attention to detail</p>
-                                        </div>
+                                    </div>
+
+                                    <div class="soft-skills">
+                                        <p>Fluent English</p>
+                                        <p>Fluent Portuguese</p>
+                                        <p>Organized</p>
+                                        <p>Dedicated</p>
+                                        <p>Attention to detail</p>
                                     </div>
                                 </div>
                             </div>
@@ -135,21 +139,30 @@
                                 </div>
             
                                 <div class="education-item">
-                                    <h6 class="school-name light-text">Escola Artística António Arroio</h6>
-                                    <h4 class="subtitle-small">Communication Design</h4>
-                                    <p class="italic">2020 - 2023</p>
+                                    <div class="school-info">
+                                        <h6 class="school-name light-text">António Arroio School of Arts</h6>
+                                        <h4 class="subtitle-small">Communication Design</h4>
+                                        <h4 class="italic">2020 - 2023</h4>
+                                    </div>
+                                    <img class="school-logo" src="imagens\AntonioArroio_logo.png" alt="Antonio Arroio school logo">
                                 </div>
             
                                 <div class="education-item">
-                                    <h6 class="school-name light-text">Escola Superior de Artes e Design Caldas da Rainha</h6>
-                                    <h4 class="subtitle-small">Graphic and Multimedia Design</h4>
-                                    <p class="italic">2023 - 2026</p>
+                                    <div class="school-info">
+                                        <h6 class="school-name light-text">Upper school of Art and Design Caldas da Rainha</h6>
+                                        <h4 class="subtitle-small">Graphic and Multimedia Design</h4>
+                                        <h4 class="italic">2023 - 2026</h4>
+                                    </div>
+                                    <img id="ipl-logo" class="school-logo" src="imagens\IPL_clean_logo.png" alt="IPL school logo">
                                 </div>
 
                                 <div class="education-item">
-                                    <h6 class="school-name light-text">ESDi School of Design</h6>
-                                    <h4 class="subtitle-small">Graphic Design</h4>
-                                    <p class="italic">2025</p>
+                                    <div class="school-info">
+                                        <h6 class="school-name light-text">ESDi School of Design</h6>
+                                        <h4 class="subtitle-small">Graphic Design</h4>
+                                        <h4 class="italic">2025</h4>
+                                    </div>
+                                    <img class="school-logo" src="imagens\ESDI_logo.png" alt="ESDI school logo">
                                 </div>
                             </div>
                         </div>
