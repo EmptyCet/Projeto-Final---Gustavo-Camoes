@@ -224,19 +224,33 @@ h6 { font-size: 0.9rem; font-weight: var( --font-weight-regular); }
   font-weight: 600;
 }
 
+.subtitle-small {
+  font-family: "Bricolage Grotesque", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.05rem;
+}
+
+.light-text {
+  opacity: 60%;
+}
 
 p {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 1rem;
-  letter-spacing: +0.02rem;
+  letter-spacing: 0rem;
+}
+
+.italic {
+  font-style: italic;
 }
 
 .light {
-    font-weight: 300;
+  font-weight: 300;
 }
 
 .bold {
-    font-weight: 700;
+  font-weight: 700;
+  letter-spacing: -0.05rem;
 }
 
 /* body header, body main, body footer {
@@ -527,6 +541,10 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   width: 100%;
 }
 
+.minus-top {
+  border-top: none !important;
+}
+
 .back {
   position: fixed;
   top: 0;
@@ -646,6 +664,10 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 }
 
 /*-----Projects-----*/
+
+.page-top-padding {
+  padding-top: var(--header-height);
+}
 
 .projects-page #projects-preview {
   padding-top: calc(var(--header-height) + var(--padding-L) + 0.2rem) !important;
@@ -854,11 +876,10 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   border-left: var(--border-line-light);
 }
 
-#about-container p {
+#about-container h5 {
   max-width: 28rem;
   font-family: 'Bricolage Grotesque', Helvetica, Arial, sans-serif;
   font-weight: 350;
-  opacity: 60%;
 }
 
 #about-title {
@@ -929,6 +950,105 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   border-radius: 0.2rem;
   border: var(--border-line);
 }
+
+/* -------- ABOUT ME --------- */
+
+#about-me-page {
+  width: 100%;
+}
+
+.about-me-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--padding-XL);
+  padding: var(--padding-XL) var(--padding-L);
+  border-right: var(--border-line);
+  border-left: var(--border-line);
+}
+
+.about-me-text {
+  max-width: 32rem;
+}
+
+.title-with-icon {
+  display: flex;
+  align-items: center;
+  gap: var(--padding-S);
+}
+
+.about-me-image {
+  width: 12rem;
+  max-width: 30%;
+}
+
+.about-info-container {
+  display: flex;
+  border-right: var(--border-line);
+  border-left: var(--border-line);
+}
+
+.interests-skills-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-right: var(--border-line);
+}
+
+.about-box {
+  padding: var(--padding-L);
+}
+
+.interests-box, .skills-box {
+  flex: 1;
+}
+
+.skills-box {
+  border-top: var(--border-line);
+}
+
+.education-box {
+  flex: 1;
+}
+
+.interests-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--padding-S);
+  margin-top: var(--padding-L);
+}
+
+.interest-single {
+  padding: 0.2rem 1rem;
+  border: var(--border-line);
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.skills-content {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--padding-L);
+  margin-top: var(--padding-M);
+}
+
+.software-icons {
+  display: flex;
+  gap: var(--padding-S);
+}
+
+.software-icons img {
+  width: 3rem;
+}
+
+.education-item {
+  margin-top: var(--padding-XL);
+}
+
+.doodle-icon {
+  width: 2rem;
+}
+
 
 
 /*-----Footer-----*/
@@ -1295,5 +1415,16 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 
   .processingCenter {
     padding: 1rem;
+  }
+
+  .about-me-container,
+  .about-info-container,
+  .skills-content {
+    flex-direction: column;
+  }
+
+  .about-me-image {
+    max-width: none;
+    width: 8rem;
   }
 }
