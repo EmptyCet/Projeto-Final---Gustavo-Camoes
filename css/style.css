@@ -103,7 +103,7 @@ iframe, video {
 :root {
 
   --header-height: 4rem; 
-  --banner-height: 50vw;
+  --banner-height: 35vw;
 
   /* TITLES, TEXT, LINES */
   --primary-color: #01151D;
@@ -800,16 +800,25 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 
 /* -------- PROJECT SHOWCASE --------- */ /* (Tag styles found above) */ 
 
-.project-showcase-container {
+#project-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: var(--banner-height); 
   gap: var(--padding-L);
-  margin-top: 40vw;
 
   background-color: var(--primary-color);
   color: var(--secondary-color);
 }
+
+#project-showcase-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
 
 #project-title-container {
   padding: var(--padding-L) var(--padding-XL);
@@ -856,13 +865,7 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   gap: 5vw;
 }
 
-#project-showcase-container {
-  display: flex;
-  flex-direction: column;
-  gap: 0px;
-}
-
-#project-showcase-container img {
+#project-container img {
   display: block;
   margin: 0;
 }
