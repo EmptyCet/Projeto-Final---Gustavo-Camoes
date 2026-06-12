@@ -497,7 +497,10 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 }
 
 .button-text {
-  display: inline-block;
+  display: flex;
+  width: max-content;
+  gap: 1rem;
+  align-items: center;
   padding: var(--padding-M) var(--padding-XL);
 
   text-transform: uppercase;  
@@ -729,6 +732,10 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   border-right: var(--border-line);
 }
 
+.tag-container :nth-child(3).tag-info {
+  border-right: var(--border-line-light);
+}
+
 .tag-container {
   display: flex;
   flex-wrap: wrap;
@@ -819,15 +826,10 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   position: fixed;
   z-index: -1;
   top: 0;
-  
+
   width: 100%;
   height: var(--banner-height);
   object-fit: cover;
-}
-
-.project-tags-container {
-  display: flex;
-  flex-direction: row;
 }
 
 #about-container {
@@ -850,12 +852,25 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 #about-title {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 5vw;
+}
+
+#project-showcase-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+#project-showcase-container img {
+  display: block;
+  margin: 0;
 }
 
 #project-dev-container {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 5vw;
   padding: var(--padding-M) var(--padding-XL);
   
@@ -863,7 +878,51 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   border-left: var(--border-line-light);
 }
 
+.doodle-icon { 
+  width: 2.5rem;
+}
 
+.doodle-icon-small { 
+  width: 1.5rem;
+}
+
+.recommended-project-container {
+  position: relative;
+  z-index: 4;
+}
+
+#recommended-project {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+  gap: 8vw;
+  padding: var(--padding-M) var(--padding-XL);
+  height: 12rem;
+  z-index: 1;
+  
+  border-right: var(--border-line-light);
+  border-left: var(--border-line-light);
+}
+
+#doodle-recommend {
+  position: relative;
+  height: 80%;
+  z-index: 4;
+}
+
+#doodle-recommend-mobile {
+  display: none;
+}
+
+#recommended-project img:last-child {
+  height: 100%;
+  transform: scale(1.35) rotate(2deg);
+  border-radius: 0.2rem;
+  border: var(--border-line);
+}
 
 
 /*-----Footer-----*/
@@ -874,9 +933,9 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   flex-direction: column;
   align-items: center;
   padding-top: var(--padding-XL);
+  z-index: 0;
 
   background-color: var(--secondary-color);
-
   position: relative;
   overflow: hidden;
 }
@@ -1020,7 +1079,7 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   .hero-nav.desktop {display: none;}
 
   .hero {
-    padding: 8vh 0 8vh 0;
+    padding: 8vh 0;
   }
 
   .hero-nav.mobile {
@@ -1104,7 +1163,7 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
     flex-direction: column;
     align-items: center;
     gap: 1vh;
-    margin-bottom: 5vh;
+    margin-bottom: 3vh;
   }
 
   .footer-contact img {
@@ -1142,8 +1201,53 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 576px) {
+  #project-title-container {
+    padding: var(--padding-L) var(--padding-L);
+  }
+  #about-container {
+    padding: var(--padding-L) var(--padding-L);
+  }
+
+  #project-dev-container {
+    padding: var(--padding-M) var(--padding-L);
+  }
+
+  #recommended-project {
+  padding: var(--padding-M) var(--padding-L);
+  height: 12rem;
+}
+
+  #recommended-project {
+    flex-direction: column;
+    height: auto;
+    gap: 2rem;
+    padding: 0rem 4rem;
+    padding-bottom: 2rem;
+  }
   
+  #doodle-recommend {
+    display: none;
+  }
+
+  #recommended-project img:last-child,
+  #doodle-recommend-mobile {
+    display: inline-block;
+    width: 80%;
+    height: auto;
+    aspect-ratio: 1 / 0.8;
+  }
+
+  #doodle-recommend-mobile {
+    width: 70%;
+    transform: rotate(6deg);
+  }
+
+  #recommended-project img:last-child {
+    transform: scale(1.35) rotate(2deg);
+    border-radius: 0.2rem;
+    border: var(--border-line);
+  }
 }
 
 @media screen and (max-width: 720px) {

@@ -89,9 +89,14 @@
 
 
         <main class="pageWidth top-padding">
-            <div class="rail side light back">
+            <div id ="backButton" class="rail side light back">
                 <div class="container-margin">
-                    <a href="projects.html" class="button-text light">back to projects</a>
+                    <a href="projects.html" class="button-text light"><svg class="doodle-icon-small" width="51" height="45" viewBox="0 0 51 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M49.0906 23.7285C49.0906 23.3985 49.0906 23.0685 41.5006 22.8985C33.9106 22.7285 18.7306 22.7285 3.09058 22.7285" stroke="white" stroke-width="5" stroke-linecap="round"/>
+                        <path d="M4.50024 20.5C4.78524 19.7438 5.93388 18.2276 7.15808 16.7684C8.37017 15.3237 9.82024 14.0476 11.3316 12.8411C12.9229 11.5708 14.4234 10.1184 15.7944 8.7257C17.2992 7.19711 18.7416 5.9384 20.7582 4.2303C21.1943 3.7838 21.4793 3.4076 21.8399 3.0884C22.2005 2.7692 22.628 2.5184 23.5002 1.5" stroke="white" stroke-width="5" stroke-linecap="round"/>
+                        <path d="M1.50024 23.5C2.17655 23.8474 3.52913 25.2474 4.88988 26.7105C6.54561 28.4909 7.74173 29.8088 9.16766 30.9228C10.5937 32.0369 12.0847 33.3175 13.3782 34.6649C14.6171 35.9554 16.2973 36.8263 17.385 38.2316C18.8762 39.8684 20.7787 41.507 21.7952 42.3246C22.2739 42.6789 22.6773 42.9105 23.5002 43.5" stroke="white" stroke-width="5" stroke-linecap="round"/>
+                        </svg>back to projects
+                    </a>
                 </div>
             </div>
 
@@ -100,46 +105,62 @@
             <article class="project-showcase-container">
 
                 <div id="project-text-info" class="rail light">
-                    <div class="rail side light back">
-                        <div class="container-margin">
-                            <a href="projects.html" class="button-text light">back to projects</a>
-                        </div>
-                    </div>
                     
                     <div id="project-text-info" class="container-margin">
                             <div class="tag-container">
+                                <!-- bland tags -->
                                 <span class="tag tag-info">Solo Project</span>
-                                <span class="tag tag-info">Project Type</span>
+                                <span class="tag tag-info">Project Type</span>   
                                 <span class="tag tag-info">2025</span>
+                                <!-- color tags -->
                                 <span class="tag tag-experimental">experimental</span>
-                                <span class="tag tag-editorial">editorial</span>
+                                <span class="tag tag-editorial">editorial</span>    
                             </div>
 
-                        <div id="project-title-container">
-                            <h1 class="project-hero-title">PROJECT NAME</h1>
+                        <div id="project-title-container">  
+                            <h1 class="project-hero-title">PROJECT NAME</h1> <!-- Project name -->
                         </div>
 
                         <div id="about-container">
                             <div id="about-title">
                                 <h2 class="subtitle">About the Project</h2>
-                                <img class="doodle-icon" src="imagens\question_mark.svg">
+                                <img class="doodle-icon" src="imagens\question_mark.svg">  
                             </div>
+                            <!-- Project description -->
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, autem voluptatum. Consequuntur, dolores molestias. Project description.</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="rail light">
-                    <div class="container-margin">
-                        <div id="project-dev-container">
-                            <h2 class="subtitle">Project Development</h2>
-                            <img class="doodle-icon" src="imagens\hammer.svg">
-                        </div> 
-                    </div>  
-                    <div id="project-content">
+                <div id="project-showcase-container">
+                    <div class="rail light">
+                        <div class="container-margin">
+                            <div id="project-dev-container">
+                                <h2 class="subtitle">Project Development</h2>
+                                <img class="doodle-icon" src="imagens\hammer.svg">
+                            </div> 
+                        </div>  
+                    </div>
+                    
+                    <div id="project-content" class="container-margin">
+                        <img src="imagens\presentations\menace\storyboard_menace.png">
+                        <img src="imagens\presentations\menace\Footer_menace.png">
                     </div>
                 </div>
+            
             </article>
+
+            <section>
+                <div id="recommended-project-container" class="rail light">
+                    <div class="container-margin">
+                        <div id="recommended-project">
+                            <img id="doodle-recommend" src="imagens\another_cool_project.svg">
+                            <img id="doodle-recommend-mobile" src="imagens\another_cool_project_mobile.svg">
+                            <img href="project.html" src="imagens\proj_thumbs\START_T.png" alt="Project thumbnail">
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
         
         <!-- Footer  -->
