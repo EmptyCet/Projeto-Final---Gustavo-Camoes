@@ -362,7 +362,7 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   .nav__menu {
     position: absolute;
     left: 0;
-    top: 3.5rem;
+    top: var(--header-height);
     width: 100%;
     height: calc(100vh - 3.5rem);
     overflow: auto;
@@ -436,10 +436,6 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 
 @media screen and (max-width: 1150px) {
   .navAction strong {
-    font-size: 1.5rem;
-  }
-
-  .footer .footer-email {
     font-size: 1.5rem;
   }
 }
@@ -547,6 +543,13 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   padding: 0 var(--padding-M);
 }
 
+.project-container-margin {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1680px;
+  padding: 0 var(--padding-M);
+}
+
 /*para utilizadores com ecrãns abaixo de 355px (base de utilizadores crucial)*/
 @media screen and (max-width: 355px) { 
  .hero-title.mobile {
@@ -558,7 +561,7 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 /*Hero Desktop display*/
 @media screen and (min-width: 992px) {
   #mainContent {
-    margin-top: calc(var(--header-height)+2rem)
+    margin-top: calc(var(--header-height));
   }
   
   .hero-nav.mobile {display: none;}
@@ -571,7 +574,7 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 /*HERO SECTION STYLES*/
   
 .hero-nav.desktop div:first-child {
-    transform: translateX(-8px);
+  transform: translateX(-8px);
 }
 
 .hero {
@@ -1202,6 +1205,18 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   .footer-item:nth-child(4) {
     padding-left: calc(var(--footer-padding) + 2vw); /*About Me*/
   }
+
+  /* Project Showcase - MOBILE */ 
+  .project-container-margin {
+    width: 100%;
+
+    max-width: 1680px;
+    padding: 0;
+  }
+
+  #recommended-project {
+    height: 26vw;
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -1210,19 +1225,15 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   }
   #about-container {
     padding: var(--padding-L) var(--padding-L);
+
   }
 
   #project-dev-container {
     padding: var(--padding-M) var(--padding-L);
   }
 
-  #recommended-project {
-  padding: var(--padding-M) var(--padding-L);
-  height: 12rem;
-}
-
-  #recommended-project {
-    flex-direction: column;
+  /* #recommended-project {
+    flex-direction: row;
     height: auto;
     gap: 2rem;
     padding: 0rem 4rem;
@@ -1231,12 +1242,21 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   
   #doodle-recommend {
     display: none;
+  } */
+
+
+  .doodle-icon {
+    width: 2rem;
   }
 
-  #recommended-project img:last-child,
+  .doodle-icon-small {
+    width: 1rem;
+  }
+
+  /* #recommended-project img:last-child,
   #doodle-recommend-mobile {
     display: inline-block;
-    width: 80%;
+    width: 60%;
     height: auto;
     aspect-ratio: 1 / 0.8;
   }
@@ -1250,6 +1270,15 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
     transform: scale(1.35) rotate(2deg);
     border-radius: 0.2rem;
     border: var(--border-line);
+  } */
+
+  .subtitle {
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: "Bricolage Grotesque", Helvetica, Arial, sans-serif;
+    letter-spacing: -0.1rem;
+    text-transform: uppercase;
+    font-weight: 600;
   }
 }
 
