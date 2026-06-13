@@ -502,6 +502,10 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   margin-top:var(--header-height)!important;
 }
 
+.element-rail {
+  width: 100%;
+}
+
 .rail {
   width: 100%;
   display: flex;
@@ -1188,6 +1192,9 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 /*** Animação do butão copy ***/
 
 .copy-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 2.5rem;
   position: relative;
   transition: transform 150ms ease;
@@ -1295,24 +1302,56 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 
   background-color: var(--secondary-color);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
-.footer li { 
+
+.footer a.button-text { 
   text-transform: uppercase;
   letter-spacing: -0.05rem;
 }
 
 .footer-email.desktop {
   position: relative;
-  display: flex;
+  display: inline-grid;
+  width: fit-content;
   align-items: center;
-  padding: 0 var(--padding-XL);
-  border-right: var(--border-line);
-  border-left: var(--border-line);
+  height: 100%;
+
+  text-align: center;
   letter-spacing: -0.05rem;
   font-family: 'Bricolage Grotesque', Helvetica, Arial, sans-serif;
   font-weight: 500;
+}
+
+.footer-email.desktop h2,
+.footer-email.desktop .footer-underline {
+  grid-area: 1 / 1;
+}
+
+.footer-email.desktop h2 {
+  display: inline;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-email.desktop .footer-underline {
+  display: block;
+  align-self: end;
+  transform: rotate(1.5deg) translateY(0.5rem);
+}
+
+.footer-contact-box {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  overflow: visible;
+  
+  gap: var(--padding-S);
+  padding: 0 var(--padding-XL);
+  border-right: var(--border-line);
+  border-left: var(--border-line);
 }
 
 .footer-nav {
@@ -1321,34 +1360,40 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   flex-direction: column;
 }
 
-/*Padding random do footer*/
+/*Padding random do footer 4 3 1 6*/ 
 
 .footer-item:nth-child(1) { 
   display: flex;
   justify-content: space-between;
-  padding: 0 4rem;
+  padding: 0 var(--padding-L);
 }
 
-.footer-item:nth-child(2) {
-  padding-left: calc(var(--footer-padding) + 3vh); /*Projects*/
+.footer-nav > li:nth-child(1) .button-text {   /* HOME */
+  margin-left: 1vw;
+  margin-right: 14vw;
 }
 
-.footer-item:nth-child(3) {
-  padding-left: calc(var(--footer-padding) + 1vh); /*Contacts*/
+.footer-nav > li:nth-child(2) .button-text {   /* PROJECTS */
+  margin-left: 3vw;
+  
 }
 
-.footer-item:nth-child(4) {
-  padding-left: calc(var(--footer-padding) + 6vh); /*About Me*/
+.footer-nav > li:nth-child(3) .button-text {   /* CONTACT */
+  margin-left: 1svw;
+  margin-right: 14vw;
 }
+
+.footer-nav > li:nth-child(4) .button-text {   /* ABOUT ME */
+  margin-left: 6vw;
+}
+
 /*--------------------------*/
 
 .footer-item {
   display: flex;
   justify-content: flex-start;
   width: 100%;
-
   background: var(--secondary-color);
-  border-bottom: var(--border-line);
 }
 
 .footer-item  {
@@ -1356,7 +1401,7 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 }
 
 .footer-item:first-child {
-  border-top: var(--border-line);
+
 }
 
 /* .footer-item a {
@@ -1389,7 +1434,6 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 }
 
 .footer-underline.desktop {
-  position: absolute; 
   right: 0;
   bottom: -1px;
   transform: rotate(1deg);
@@ -1399,12 +1443,20 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   display: none;
 }
 
+.footer-contact-paper-container {
+  width: 470px;
+  height: 220px;
+  overflow: hidden;
+  position: absolute;
+  bottom: -200px;  
+  right: 4rem;
+}
+
 .footer-contact-paper {
   width: 450px;
   position: absolute;
   bottom: 0;  
-  right: 5rem;
-  transform: translateY(60%) rotate(2deg);
+  transform: translateY(65%) rotate(1.5deg);
 }
 
 /*--- Processing ---*/
@@ -1546,6 +1598,10 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
     display: none;
   }
 
+  .footer-contact-box {
+    display: none;
+  }
+
   .footer-contact {
     display: flex;
     flex-direction: column;
@@ -1554,11 +1610,7 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
     margin-bottom: 3vh;
   }
 
-  .footer-contact img {
-    width: 80%;
-  }
-
-  .footer-contact-paper {
+  .footer-contact-paper-container {
     display: none;
   }
 
@@ -1567,7 +1619,6 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
     justify-content: center;
     width: 100%;
     background: var(--secondary-color);
-    border-bottom: var(--border-line);
   } 
 
   .footer-item:nth-child(1) { 
@@ -1647,6 +1698,10 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 
   .skills-content {
     flex-direction: column;
+  }
+
+  .footer li .copy-contact {
+    display: none;
   }
 }
 
@@ -1835,7 +1890,11 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   }
 
   #contact {
-    margin: 0 var(--padding-M)
+    margin: 0 var(--padding-M);
+  }
+
+  .footer-contact {
+    margin: 0 var(--padding-M);
   }
 
   .contact-box {
