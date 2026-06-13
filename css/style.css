@@ -1509,6 +1509,8 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   }
 }
 
+
+
 @media screen and (max-width: 720px) {
     /* Processing */
 
@@ -1553,6 +1555,10 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   }
   
 
+  .about-me-container {
+    padding-bottom: 0;
+  }
+
   .about-me-container,
   .about-info-container,
   .skills-content {
@@ -1565,6 +1571,38 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   .about-me-image {
     max-width: none;
     width: 8rem;
+  }
+  
+  #portrait-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    height: max-content;
+
+    margin-left: 5vw;
+  }
+
+  #portrait-images img {
+    height: 8rem;
+    width: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+  }
+
+  #secondary-1 {
+    display: inline-block;
+    transform: scale(1.2) translateY(0.5rem) translateX(-1rem) rotate(-2.5deg);
+  }
+
+  #secondary-2 {
+    display: inline-block;
+    transform: translateY(-1rem) translateX(1.2rem) rotate(-2deg);
+  }
+  
+
+  #about-sparkle {
+    transform: none;
+    width: 8vw;
   }
 }
 
@@ -1603,7 +1641,7 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   }
 
   .education-item img {
-    margin-left: var(--padding-XL);
+    margin-left: 8vw;
   }
 
   /* #recommended-project {
@@ -1656,3 +1694,35 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   }
 }
 
+@media screen and (max-width: 400px) {
+  .education-box {
+    padding: var(--padding-L) 6vw;
+  }
+
+  .interests-box {
+    padding-top: var(--padding-L);
+    padding-bottom: var(--padding-L);
+    padding-right: 0vw;
+    padding-left: 6vw;
+  }
+
+  .skills-box {
+    padding: var(--padding-L) 6vw;
+  }
+
+  .skills-content {
+    min-width: 12vw;
+  }
+
+  .skills-content .title-with-icon {
+    gap: 0.5rem;
+  }
+
+  .skills-content .title-with-icon .doodle-icon {
+    transform: translateY(0.2rem) translateX(-0.8rem);
+  }
+
+  .software-icons img {
+    width: 45%;
+  }
+}
