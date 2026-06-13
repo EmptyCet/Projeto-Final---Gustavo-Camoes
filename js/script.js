@@ -31,7 +31,7 @@ window.addEventListener('resize', () => {  /*quando a janela está a ser resized
 });
 
 /*Basicamente, equanto forem detetados inputs de resize, é começado um timer de 200ms em que a animação é feita inativa,
-então só quando o utilizador para de fazer resize, o ultimo timer de 200ms passa, e ao passar, é removida a classe .is-resizing*/
+então só quando o utilizador para de fazer resize, o ultimo timer de 200ms passa, e ao passar, é removida a classe .is-resizing, deixando a animação dar*/
 
   
 /* ------ Cards Hover ------ */
@@ -73,6 +73,59 @@ cards.forEach(card => {
   });
 });
 
+
+/* --- Copy email Button --- */
+
+/* guarda as variaveis do copyBtn e copyImg no butão e na imagem lá dentro*/
+const copyBtn = document.querySelector(".copy-contact"); 
+const copyImg = copyBtn.querySelector("img");
+
+/*variável de timer*/
+let resetTimer; 
+
+/* no click do butão, põe o texto gustavo.camoes@gmail.com no clipboard */
+copyBtn.addEventListener("click", () => {
+  navigator.clipboard.writeText("gustavo.camoes@gmail.com");
+
+  /* reset da animação: remove a class .copied, avisa o browser, e adiciona outra vez a classe*/
+  copyBtn.classList.remove("copied");
+  void copyBtn.offsetWidth; 
+  copyBtn.classList.add("copied");
+
+  /* muda o svg para o svg com check */
+  copyImg.src = "imagens/copy_desktop_check.svg";
+
+  /* define variavel pop, cria um <span> com "email copied!" dentro */
+  const pop = document.createElement("span");
+  pop.classList.add("copy-pop");
+  pop.textContent = "email copied!";
+
+  /* cria variaveis js randomização dos valores de animação do texto email copied */
+  const rotation = Math.random() * 20 - 10; // -10deg to +10deg
+  const duration = 700 + Math.random() * 500; // 700-1200ms
+  const height = 1.5 + Math.random() * 1.5; // 1.5rem-3rem
+
+  /* equivale as variáveis js a novas variaveis CSS - estav variáveis estãoa atribuídas na animação no documento CSS */
+  pop.style.setProperty("--rotation", `${rotation}deg`); 
+  pop.style.setProperty("--duration", `${duration}ms`);
+  pop.style.setProperty("--height", `${height}rem`);
+
+  copyBtn.appendChild(pop); /* Depois de estar tudo sobre o <span> definido, esta linha, com a função appendChild, coloca o span dentro do copyBtn*/
+
+  /* remove o <span> quando a animação acaba */
+  pop.addEventListener("animationend", () => {
+    pop.remove();
+  });
+
+  /* serve para cancelar o timer anterior, para estar sempre em efeito o timer mais recente */
+  clearTimeout(resetTimer);  
+
+  /* cria um timer de 2000ms. Remove a classe "copied" e muda a imagem para a default. Mudando o butão para o seu estado original. */
+  resetTimer = setTimeout(() => { 
+    copyBtn.classList.remove("copied"); 
+    copyImg.src = "imagens/copy_desktop.svg";
+  }, 2000);
+});
 
 /* ------ Footer Year Update ------ */
 

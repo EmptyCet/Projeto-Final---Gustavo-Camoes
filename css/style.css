@@ -53,7 +53,6 @@ img {
   
   /* This isn't needed, but as a user, I get frustrated when I highlight text and the image gets highlighted too */
   user-select: none;
-  pointer-events: none;
 }
 
 button {
@@ -140,7 +139,6 @@ iframe, video {
   --padding-M: 1rem;
   --padding-L: 2rem;
   --padding-XL: 3rem;
-
 }
 
 
@@ -1184,6 +1182,108 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 .email-box h2 {
   user-select: text;
   cursor: text;
+}
+
+.contact-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+/*** Animação do butão copy ***/
+
+.copy-contact {
+  width: 2.5rem;
+  position: relative;
+  transition: transform 150ms ease;
+  cursor: pointer;
+}
+
+.copy-contact::after {
+  content: "copy email";   
+
+  position: absolute;
+  bottom: 100%;
+  left: 40%;
+  transform: translateX(-50%) translateY(0rem);
+
+  opacity: 0;
+  transition:
+    opacity 150ms ease,
+    transform 300ms ease;  /*animação OUT do "copy email"*/
+
+  white-space: nowrap;
+  pointer-events: none;
+
+  font-size: 0.8rem;
+}
+
+.copy-contact:hover::after {
+  opacity: 70%;
+  transform: translateX(-50%) translateY(-0.5rem);
+
+  transition:
+    opacity 150ms ease,   
+    transform 300ms ease;  /*animação IN do "copy email" */
+}
+
+.copy-contact.copied:hover::after {
+  opacity: 0;
+}
+
+.copy-contact:hover {
+  transform: scale(1.2);
+}
+
+
+@keyframes click-copy {
+  0% {
+    transform: scale(1);
+  }
+
+  10% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(1.15);
+  }
+}
+
+.copy-contact.copied {
+  animation: click-copy 400ms ease-out forwards;
+}
+
+/*Animação "email copied" (texto no js) */
+.copy-pop {
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  transform: translateX(-50%);
+
+  animation: copiedPop var(--duration) ease-out forwards;
+  pointer-events: none;
+  white-space: nowrap;
+  color: var(--pop-color);
+}
+
+/* animação de fade out do "email copied!" */ 
+@keyframes copiedPop { 
+  from {
+    opacity: 1;
+    transform:
+      translateX(-50%)
+      translateY(0)
+      rotate(var(--rotation)); /* Propriedade dinamica de rotação criada no js */ 
+  }
+
+  to {
+    opacity: 0;
+    transform:
+      translateX(-50%)
+      translateY(calc(var(--height) * -1)) /* Propriedade dinamica criada no js de quão alto o texto vai */ 
+      rotate(var(--rotation)); /* Propriedade dinamica de rotação criada no js */ 
+  }
 }
 
 
