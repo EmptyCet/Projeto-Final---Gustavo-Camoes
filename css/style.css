@@ -69,10 +69,10 @@ svg {
   width: 100%;
   
   /* Optional - make the SVG's fill be the same as the inherited color */
-  fill: currentColor;
+  fill: none;
   
   /* Prevent the SVG from altering cursor interaction */
-  pointer-events: none;
+
 }
 
 iframe, video {
@@ -234,7 +234,7 @@ h6 { font-size: 0.9rem; font-weight: var( --font-weight-regular); }
 }
 
 .lowercase {
-  text-transform: lowercase;
+  text-transform: lowercase !important;
 }
 
 .light-text {
@@ -1168,14 +1168,9 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   flex-direction: column;
   align-items: center;
   gap: 0.2rem;
-  
 }
 
 .email-box .footer-underline {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.2rem;
   user-select: none;
 }
 
@@ -1296,14 +1291,14 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   flex-direction: column;
   align-items: center;
   padding-top: var(--padding-XL);
-  z-index: -1;
+  z-index: 1;
 
   background-color: var(--secondary-color);
   position: relative;
   overflow: hidden;
 }
 
-.footer { 
+.footer li { 
   text-transform: uppercase;
   letter-spacing: -0.05rem;
 }
@@ -1831,12 +1826,52 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   } */
 
   .subtitle {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 500;
     font-family: "Bricolage Grotesque", Helvetica, Arial, sans-serif;
     letter-spacing: -0.1rem;
     text-transform: uppercase;
     font-weight: 600;
+  }
+
+  #contact {
+    margin: 0 var(--padding-M)
+  }
+
+  .contact-box {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .copy-contact {
+    width: 2rem;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  #contact,
+  .contact-box,
+  .email-box {
+    width: 100%;
+    max-width: 430px;
+  }
+
+  .email-box {
+    gap: 0;
+  }
+
+  .email-box h2 {
+    width: 100%;
+    text-align: center;
+    font-size: clamp(1rem, 7vw, 2rem);
+    white-space: nowrap;
+  }
+
+  .email-box svg {
+    width: 100%;
+    height: auto;
   }
 }
 
