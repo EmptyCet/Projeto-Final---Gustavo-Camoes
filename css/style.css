@@ -53,6 +53,7 @@ img {
   
   /* This isn't needed, but as a user, I get frustrated when I highlight text and the image gets highlighted too */
   user-select: none;
+  pointer-events: none;
 }
 
 button {
@@ -234,6 +235,10 @@ h6 { font-size: 0.9rem; font-weight: var( --font-weight-regular); }
   letter-spacing: -0.05rem;
 }
 
+.lowercase {
+  text-transform: lowercase;
+}
+
 .light-text {
   opacity: 60%;
 }
@@ -291,6 +296,7 @@ p {
 .top-padding {
   margin-top: var(--header-height);
 }
+
 
 /*id for header styling*/
 #topHeader {
@@ -955,6 +961,7 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 
 #about-me-page {
   width: 100%;
+  background-color: var(--secondary-color);
 }
 
 .about-me-container {
@@ -1141,6 +1148,46 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   margin-top: var(--padding-L);
 }
 
+/*-----Contact page-----*/
+
+#contact-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+  user-select: none;
+}
+
+.email-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  
+}
+
+.email-box .footer-underline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  user-select: none;
+}
+
+.email-box h2 {
+  user-select: text;
+  cursor: text;
+}
+
+
+
 /*-----Footer-----*/
 
 .footer { 
@@ -1149,7 +1196,7 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   flex-direction: column;
   align-items: center;
   padding-top: var(--padding-XL);
-  z-index: 0;
+  z-index: -1;
 
   background-color: var(--secondary-color);
   position: relative;
@@ -1168,7 +1215,6 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   padding: 0 var(--padding-XL);
   border-right: var(--border-line);
   border-left: var(--border-line);
-  text-transform: lowercase;
   letter-spacing: -0.05rem;
   font-family: 'Bricolage Grotesque', Helvetica, Arial, sans-serif;
   font-weight: 500;
