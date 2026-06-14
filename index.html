@@ -70,13 +70,13 @@
                         <div class="doodle-container">
                             <img class="doodle-text about" src="imagens\about me.svg" alt="About me">
                         </div>
-                        <a href="#about-me" ><h1 class="hero-title">GUSTAVO CAMÕES</h1></a>
+                        <a href="about-me.html" ><h1 class="hero-title">GUSTAVO CAMÕES</h1></a>
                     </div>
 
                     <img class="doodle-star" src="imagens\little_star.svg" alt="little star">
 
                     <div class="hero-title-container">
-                        <a href="#projects"><h1 class="hero-title">DESIGN PORTFOLIO</h1></a>
+                        <a href="#projects-preview"><h1 class="hero-title">DESIGN PORTFOLIO</h1></a>
                         <div class="doodle-container">
                             <img class="doodle-text projects" src="imagens\Check out my work.svg" alt="Check out my work!">
                         </div>
@@ -87,13 +87,13 @@
                 <div class="hero-nav mobile">
               
                         <img class="doodle-text" src="imagens\about me_MOBILE.svg" alt="About me">
-                        <h1 href="#about-me" class="hero-title mobile">GUSTAVO<br>CAMÕES</h1>
+                        <h1 href="about-me.html" class="hero-title mobile">GUSTAVO<br>CAMÕES</h1>
                    
 
                     <img class="doodle-star" src="imagens\little_star.svg" alt="little star">
 
 
-                        <h1 href="#projects" class="hero-title mobile">DESIGN<br>PORTFOLIO</h1>
+                        <h1 href="#projects-preview" class="hero-title mobile">DESIGN<br>PORTFOLIO</h1>
                         <img class="doodle-text" src="imagens\check out my work_MOBILE.svg" alt="Check out my work!">
                    
                 </div>
@@ -202,7 +202,7 @@
                 </div>
 
                 <div class="rail center light">
-                    <a class="button-text light">See all projects</a>
+                    <a href="projects.html" class="button-text light">See all projects</a>
                 </div>
             </section>
 
@@ -211,22 +211,72 @@
         <!-- Footer  -->
         <footer class="footer">  
             <!-- Footer MOBILE contact area -->
-            <div class="footer-contact"> 
-                <strong class="footer-email subtitle" href="index.html" rel="noopener noreferrer">gustavo.camoes@gmail.com</strong>
-                <img class="footer-underline" src="imagens\underline.svg">
-                <img src="imagens\send_me_an_email.svg">
-            </div>
+            <div class="footer-contact">
+                    <div class="contact-box">
+                        <div class="email-box">
+                            <h2 class="subtitle lowercase">gustavo.camoes@gmail.com</h2>
+                            <svg width="431" height="18" viewBox="0 0 431 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.0823364 16.1865C112.249 10.0198 355.382 -1.41352 430.582 2.18648" stroke="#0506DE" stroke-width="3"/>
+                            </svg>
+
+                        </div>
+                        <div class="copy-contact">
+                            <img src="imagens\copy_desktop.svg">
+                        </div>
+                    </div>
+                    <img id="doodle-contact" src="imagens\send_me_an_email.svg">
+                </div>
             <!-- Footer navigation -->
             <ul class="footer-nav">
-                <li class="footer-item"><a class="button-text" href="index.html" rel="noopener noreferrer">Home</a>
-                    <strong class="footer-email desktop subtitle" href="index.html" rel="noopener noreferrer">gustavo.camoes@gmail.com<img class="footer-underline desktop" src="imagens\underline.svg"></strong>
+                <li class="rail side">
+                    <div class="footer-item container-margin">
+                        <a class="button-text" href="index.html" rel="noopener noreferrer">Home</a>
+                
+                        <div class="footer-contact-box">
+                            <div class="footer-email desktop">
+                                <h2 class="subtitle lowercase">gustavo.camoes@gmail.com</h2>
+                
+                                <div class="footer-underline">
+                                    <svg width="300" height="18" viewBox="0 0 431 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0.0823364 16.1865C112.249 10.0198 355.382 -1.41352 430.582 2.18648" stroke="#0506DE"
+                                            stroke-width="3" />
+                                    </svg>
+                                </div>
+                            </div>
+                
+                            <div class="copy-contact">
+                                <img src="imagens/copy_desktop.svg" alt="Copy email">
+                            </div>
+
+                            <div class="footer-contact-paper-container">
+                                <img class="footer-contact-paper" src="imagens\send_email.svg">
+                            </div>
+                        </div>
+                    </div>
                 </li>
-                <li class="footer-item"><a class="button-text" rel="noopener noreferrer">Projects</a></li>
-                <li class="footer-item"><a class="button-text" rel="noopener noreferrer">Contacts</a></li>
-                <li class="footer-item"><a class="button-text" href="about-me.html" rel="noopener noreferrer">About Me</a></li>
+                
+                <li class="rail side minus-top">
+                    <div class="footer-item container-margin">
+                        <a class="button-text" href="projects.html" rel="noopener noreferrer">Projects</a>
+                    </div>
+                </li>
+                
+                <li class="rail side minus-top">
+                    <div class="footer-item container-margin">
+                        <a class="button-text" href="contacts.html" rel="noopener noreferrer">Contacts</a>
+                    </div>
+                </li>
+                
+                <li class="rail side minus-top">
+                    <div class="footer-item container-margin">
+                        <a class="button-text" href="about-me.html" rel="noopener noreferrer">About Me</a>
+                    </div>
+                </li>
             </ul>
 
-            <img class="footer-contact-paper" src="imagens\send_email.svg">
+            <!-- <div class="footer-contact-paper-container">
+                <img class="footer-contact-paper" src="imagens\send_email.svg">
+            </div> -->
             <p class="footer-info">&copy; <span id="current-year"></span> GUSTAVO CAMÕES Design Portfolio</p>
         </footer>
         

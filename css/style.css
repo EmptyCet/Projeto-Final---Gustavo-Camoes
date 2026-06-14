@@ -22,6 +22,8 @@ html {
   }
 }
 
+
+
 *,
 *::before,
 *::after,
@@ -520,6 +522,7 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   gap: 1rem;
   align-items: center;
   padding: var(--padding-M) var(--padding-XL);
+  pointer-events: pointer;
 
   text-transform: uppercase;  
   color: var(--primary-color);
