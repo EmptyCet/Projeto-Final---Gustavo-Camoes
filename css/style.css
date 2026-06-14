@@ -244,7 +244,7 @@ h6 { font-size: 0.9rem; font-weight: var( --font-weight-regular); }
 p {
   font-family: "Inter", Helvetica, Arial, sans-serif;
   font-size: 1rem;
-  letter-spacing: -0.05rem;
+  letter-spacing: 0rem;
 }
 
 .italic {
@@ -915,6 +915,35 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   gap: 5vw;
 }
 
+
+.project-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-L);
+
+  padding: var(--padding-L) var(--padding-XL);
+  padding-bottom: var(--padding-XL);
+  border-right: var(--border-line-light);
+  border-left: var(--border-line-light);
+  border-top: var(--border-ling-light);
+}
+
+.project-text-container h5 {
+  max-width: 38rem;
+  font-family: 'Bricolage Grotesque', Helvetica, Arial, sans-serif;
+  font-weight: 250;
+  line-height: 1.1;
+}
+
+
+
+.project-text-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5vw;
+}
+
 #project-container img {
   display: block;
   margin: 0;
@@ -954,7 +983,7 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   gap: 8vw;
   padding: var(--padding-M) var(--padding-XL);
   height: 12rem;
-  z-index: 1;
+  z-index: 2;
   
   border-right: var(--border-line-light);
   border-left: var(--border-line-light);
@@ -1217,6 +1246,7 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   position: relative;
   transition: transform 150ms ease;
   cursor: pointer;
+  z-index: 5;
 }
 
 .copy-contact::after {
@@ -1318,7 +1348,7 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   flex-direction: column;
   align-items: center;
   padding-top: var(--padding-XL);
-  z-index: 1;
+  z-index: 0;
 
   background-color: var(--secondary-color);
   position: relative;
@@ -1771,6 +1801,7 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 
   #project-container {
     margin-top: 16rem; 
+    padding-bottom: 4rem;
   }
 
   .project-banner {
@@ -1961,13 +1992,13 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   }
 
   .copy-contact {
-    width: 3rem;
+    width: 2.5rem;
     height: auto;
     aspect-ratio: 1 / 1;
   }
 
   .copy-contact img {
-    width: 3rem;
+    width: 2.5rem;
     height: auto;
     aspect-ratio: 1 / 1;
   }
