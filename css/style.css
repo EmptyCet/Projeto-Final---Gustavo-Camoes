@@ -577,6 +577,20 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   padding: 0 var(--padding-M);
 }
 
+.video-embed {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  background-color: black;
+}
+
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
 /*para utilizadores com ecrãns abaixo de 355px (base de utilizadores crucial)*/
 @media screen and (max-width: 355px) { 
  .hero-title.mobile {
@@ -629,6 +643,7 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 
 .hero-title,
 .project-hero-title {
+  text-transform: uppercase;
   font-weight: 350;
   margin: 0;
   line-height: 0.75;
@@ -1655,6 +1670,31 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   #recommended-project {
     height: 26vw;
   }
+
+  /* scaling automático do video dependendo no ratio (para embeds do vimeo) */
+
+  .video-embed {
+    width: 100%;
+    height: auto;
+  }
+
+  .video-embed.r4-3 {
+    aspect-ratio: 4 / 3; 
+  }
+
+  .video-embed.r16-9 {
+    aspect-ratio: 16 / 9; 
+  }
+
+  .video-embed.r1-1 {
+    aspect-ratio: 1 / 1; 
+  }
+
+  .video-embed iframe {
+    width: 100%;
+    height: 100%;
+  }
+
 
   /* ABOUT ME - MOBILE */
   #secondary-2 {
