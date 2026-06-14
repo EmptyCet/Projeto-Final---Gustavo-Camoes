@@ -421,7 +421,7 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 
   .nav__link {
     border-bottom: var(--border-line);
-    padding: var(--padding-M) var(--padding-L);
+    padding: var(--padding-L) var(--padding-L);
   }
 }
 
@@ -1206,7 +1206,7 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 
   position: absolute;
   bottom: 100%;
-  left: 40%;
+  left: 45%;
   transform: translateX(-50%) translateY(0rem);
 
   opacity: 0;
@@ -1220,21 +1220,23 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   font-size: 0.8rem;
 }
 
-.copy-contact:hover::after {
-  opacity: 70%;
-  transform: translateX(-50%) translateY(-0.5rem);
+@media (hover: hover) {   /*ativa os estilos de hover só em dispositivos que suportam a função hover */
+  .copy-contact:hover::after {
+    opacity: 70%;
+    transform: translateX(-50%) translateY(-0.5rem);
 
-  transition:
-    opacity 150ms ease,   
-    transform 300ms ease;  /*animação IN do "copy email" */
-}
+    transition:
+      opacity 150ms ease,   
+      transform 300ms ease;  /*animação IN do "copy email" */
+  }
 
-.copy-contact.copied:hover::after {
-  opacity: 0;
-}
+  .copy-contact.copied:hover::after {
+    opacity: 0;
+  }
 
-.copy-contact:hover {
-  transform: scale(1.2);
+  .copy-contact:hover {
+    transform: scale(1.2);
+  }
 }
 
 
@@ -1905,7 +1907,13 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   }
 
   .copy-contact {
-    width: 2rem;
+    width: 3rem;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .copy-contact img {
+    width: 3rem;
     height: auto;
     aspect-ratio: 1 / 1;
   }
