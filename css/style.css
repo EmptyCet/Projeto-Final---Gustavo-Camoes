@@ -570,6 +570,20 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   padding: 0 var(--padding-M);
 }
 
+#project-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#project-content img {
+ width: 100%;
+}
+
+#project-content .project-text-container {
+ width: 100%;
+}
+
 .project-container-margin {
   width: 100%;
   margin: 0 auto;
@@ -581,6 +595,13 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   position: relative;
   width: 100%;
   height: 80vh;
+  background-color: black;
+}
+
+.video-embed.full {
+  position: relative;
+  width: 100%;
+  height: 100vh;
   background-color: black;
 }
 
@@ -973,6 +994,9 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   z-index: 4;
 }
 
+
+/* Recommended Project */
+
 #recommended-project {
   position: relative;
   display: flex;
@@ -980,13 +1004,23 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   justify-content: center;
   align-items: center;
   overflow: visible;
-  gap: 8vw;
+  gap: 6vw;
   padding: var(--padding-M) var(--padding-XL);
   height: 12rem;
   z-index: 2;
   
   border-right: var(--border-line-light);
   border-left: var(--border-line-light);
+}
+
+.recommended-image {
+  height: 100%;
+  transform: scale(1.35) rotate(2deg);
+  border-radius: 0.2rem;
+  border: var(--border-line);
+
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
 }
 
 #doodle-recommend {
@@ -999,14 +1033,9 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   display: none;
 }
 
-#recommended-project img:last-child {
-  height: 100%;
-  transform: scale(1.35) rotate(2deg);
-  border-radius: 0.2rem;
-  border: var(--border-line);
-}
-
+/* --------------------------- */
 /* -------- ABOUT ME --------- */
+/* --------------------------- */
 
 #about-me-page {
   width: 100%;
