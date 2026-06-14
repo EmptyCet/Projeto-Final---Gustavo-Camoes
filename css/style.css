@@ -22,8 +22,6 @@ html {
   }
 }
 
-
-
 *,
 *::before,
 *::after,
@@ -608,7 +606,6 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 
 .hero {
   min-height: 100vh;
-  height: 100vh;
   width: 100%;
   padding-top: calc(var(--header-height));
   max-width: 1680px;
@@ -738,13 +735,16 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   background-color: var(--secondary-color);
 }
 
-.project-card:hover .project-card-info {
-  display: inline-flex;
-  flex-direction: column;
+@media (hover: hover) {
 
-  width: max-content;
-  transform: translateY(-100%);
-  z-index: 5;
+  .project-card:hover .project-card-info {
+    display: inline-flex;
+    flex-direction: column;
+
+    width: max-content;
+    transform: translateY(-100%);
+    z-index: 5;
+  }
 }
 
 .project-card-title-container {
@@ -1726,6 +1726,17 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   .processingCenter {
     padding: 1rem;
   }
+
+  /* Project */
+
+  #project-container {
+    margin-top: 16rem; 
+  }
+
+  .project-banner {
+    margin-top: 6rem; 
+    height: 12rem;
+  } 
 
   /* About me */
   .about-me-text {
