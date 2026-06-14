@@ -676,6 +676,10 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   font-size: 8rem;
 }
 
+.hero-title:hover {
+  transform: scale(1.5);
+}
+
 .doodle-text {
   width: 24rem;
   height: 100%;
@@ -700,6 +704,22 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   display: inline-block;
   line-height: 0;
   pointer-events: auto;
+}
+
+@media (hover: hover) {
+
+  .hero-title-container a:hover {
+    animation: hoverHeroEffect 1.8s steps(1) infinite;  /* Effeito de hover pseudo random, dá a animação enquanto o utilizador faz hover*/
+  }
+
+  @keyframes hoverHeroEffect {
+    0%   { transform: scale(1.03) rotate(1.5deg); }
+    20%  { transform: scale(1.02) rotate(-3deg); }
+    40%  { transform: scale(0.98) rotate(2deg); }
+    60%  { transform: scale(1.04) rotate(-1deg); }
+    80%  { transform: scale(1.01) rotate(3deg); }
+    100% { transform: scale(1.00) rotate(0deg); }
+  }
 }
 
 .doodle-star {
@@ -989,6 +1009,15 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   width: 1.5rem;
 }
 
+.doodle-icon-small.pop {
+  width: 1.5rem;
+  transform: rotate(-90deg);
+}
+
+.doodle-icon-small.pop path {
+  stroke: #00f;
+}
+
 .recommended-project-container {
   position: relative;
   z-index: 4;
@@ -1040,6 +1069,7 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 #about-me-page {
   width: 100%;
   background-color: var(--secondary-color);
+  margin-bottom: var(--padding-M); 
 }
 
 .about-me-container {
@@ -1127,7 +1157,7 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   display: flex;
   flex-wrap: wrap;
 
-  max-width: 20rem;
+  max-width: 25rem;
   gap: var(--padding-S);
   margin-top: var(--padding-L);
 }
