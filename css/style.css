@@ -824,6 +824,10 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   border-right: var(--border-line);
 }
 
+#project-text-info .tag-container {
+  border-left: var(--border-line-light);
+}
+
 .tag-container :nth-child(3).tag-info {
   border-right: var(--border-line-light);
 }
@@ -885,7 +889,7 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 }
 
 .tag-info {
-  border-left: var(--border-line-light);
+  border-right: var(--border-line-light);
   background-color: var(--primary-color);
   color: var(--secondary-color);
 }
@@ -966,7 +970,7 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
   padding-bottom: var(--padding-XL);
   border-right: var(--border-line-light);
   border-left: var(--border-line-light);
-  border-top: var(--border-ling-light);
+  border-top: var(--border-line-light);
 }
 
 .project-text-container h5 {
@@ -1951,7 +1955,13 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 @media screen and (max-width: 576px) {
   #project-title-container {
     padding: var(--padding-L) var(--padding-L);
+    border-top: none;
   }
+
+  .tag-info {
+    border-bottom: var(--border-line-light);
+  }
+
   #about-container {
     padding: var(--padding-L) var(--padding-L);
   }
@@ -1984,6 +1994,12 @@ body.is-resizing .nav__menu {  /*Classe .is-resizing para o body, esta classe é
 
   .education-item img {
     margin-left: 8vw;
+  }
+
+
+
+  .project-hero-title {
+    font-weight: 450 !important;
   }
 
   /* #recommended-project {
